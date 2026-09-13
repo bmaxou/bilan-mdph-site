@@ -1,0 +1,123 @@
+<!doctype html>
+  <html lang="fr">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Bilan MDPH &amp; RQTH</title>
+  <style>
+  :root{color-scheme:light}
+  body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,'Inter',sans-serif;background:#F1F0EA;color:#141413}
+img{max-width:100%;display:block}
+  [hidden]:not([hidden=until-found i]){display:none!important}
+  html.gate-locked body > *:not(#gate){display:none!important}
+  html.gate-locked{overflow:hidden}
+  #gate{position:fixed;inset:0;z-index:9999;display:none;align-items:flex-start;justify-content:center;
+  background:#F1F0EA;padding:0;overflow-y:auto;}
+  html.gate-locked #gate{display:flex;}
+  #gate .wrap{width:100%;max-width:520px;text-align:center;padding:0 24px 56px;}
+  #gate .illus{width:100%;max-width:460px;margin:36px auto 8px;border-radius:18px;overflow:hidden;
+  box-shadow:0 18px 40px -20px rgba(20,30,25,.35);}
+#gate .illus img{width:100%;height:auto;}
+  #gate h1{font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:25px;
+  color:#1C2420;margin:26px 0 10px;line-height:1.35;}
+#gate .sub{font-size:14.5px;color:#5B6058;margin:0 0 20px;line-height:1.7;}
+#gate .dots{display:flex;gap:6px;justify-content:center;margin:0 0 26px;}
+#gate .dots span{width:6px;height:6px;border-radius:50%;background:#B9BBA9;
+animation:pulse 1.4s ease-in-out infinite;}
+#gate .dots span:nth-child(2){animation-delay:.2s}
+#gate .dots span:nth-child(3){animation-delay:.4s}
+@keyframes pulse{0%,80%,100%{opacity:.35;transform:scale(.85)}40%{opacity:1;transform:scale(1)}}
+#gate hr{border:none;border-top:1px solid #DCD6C6;width:56px;margin:0 auto 22px;}
+#gate .tagline{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:15px;
+color:#2E5E4E;margin:0 0 32px;}
+#gate .box{width:100%;max-width:300px;margin:0 auto;text-align:center;
+background:#fff;border:1px solid #E5E1D3;border-radius:16px;padding:24px 22px;}
+#gate .box p.lbl{font-size:12.5px;color:#8B9086;margin:0 0 14px;letter-spacing:.03em;}
+#gate input{width:100%;box-sizing:border-box;padding:13px 14px;border-radius:11px;
+border:1px solid #DCD6C6;background:#fff;font-size:16px;color:#1C2420;text-align:center;
+letter-spacing:.18em;font-family:inherit;}
+#gate input:focus{outline:none;border-color:#2E5E4E;box-shadow:0 0 0 3px rgba(46,94,78,.14);}
+#gate button{width:100%;margin-top:10px;padding:13px 14px;border:none;border-radius:11px;
+background:#2E5E4E;color:#F4F1EA;font-size:14.5px;font-family:inherit;cursor:pointer;}
+#gate .err{min-height:18px;margin:10px 0 0;font-size:12.5px;color:#A03A2B;}
+a{color:#2E5E4E}
+  .site-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+max-width:920px;margin:0 auto;padding:26px 24px;}
+.site-header .brand{font-family:Georgia,'Times New Roman',serif;font-size:16px;color:#1C2420;}
+.site-header a.tel{font-size:13.5px;color:#2E5E4E;text-decoration:none;font-weight:600;}
+.hero{max-width:760px;margin:0 auto;padding:24px 24px 56px;text-align:center;}
+  .hero h1{font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:34px;line-height:1.3;
+color:#1C2420;margin:0 0 16px;}
+.hero .sub{font-size:16px;color:#2E5E4E;margin:0 0 22px;font-weight:600;}
+.hero .lead{font-size:16px;color:#4A4F45;line-height:1.75;max-width:600px;margin:0 auto;}
+section.block{max-width:720px;margin:0 auto;padding:44px 24px;border-top:1px solid #E5E1D3;}
+section.block h2{font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:22px;
+color:#1C2420;margin:0 0 16px;text-align:center;}
+section.block p{font-size:15px;color:#4A4F45;line-height:1.8;margin:0 0 14px;}
+  .steps{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:18px;}
+.steps li{display:flex;gap:16px;align-items:flex-start;}
+  .steps .num{flex:none;width:32px;height:32px;border-radius:50%;background:#2E5E4E;color:#F4F1EA;
+font-family:Georgia,'Times New Roman',serif;font-size:14px;display:flex;align-items:center;
+justify-content:center;}
+.steps .txt h3{margin:2px 0 4px;font-size:15.5px;color:#1C2420;}
+.steps .txt p{margin:0;font-size:14.5px;color:#5B6058;line-height:1.7;}
+.disclaimer{max-width:720px;margin:0 auto;padding:22px 26px;background:#fff;border:1px solid #E5E1D3;
+border-radius:14px;}
+.disclaimer p{font-size:13.5px;color:#5B6058;line-height:1.75;margin:0;}
+.cta{text-align:center;padding:52px 24px 64px;}
+  .cta h2{font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:24px;color:#1C2420;
+margin:0 0 10px;}
+.cta p{font-size:15px;color:#5B6058;margin:0 0 22px;}
+.cta a.btn{display:inline-block;background:#2E5E4E;color:#F4F1EA;text-decoration:none;
+font-size:14.5px;font-weight:600;padding:14px 30px;border-radius:11px;}
+footer{max-width:720px;margin:0 auto;padding:24px 24px 48px;text-align:center;}
+footer p{font-size:12px;color:#9AA096;line-height:1.7;margin:0;}
+</style>
+  <script>
+  (function(){
+  try{ if(localStorage.getItem('bilanmdph-apercu') !== 'ok') document.documentElement.classList.add('gate-locked'); }
+    catch(e){ document.documentElement.classList.add('gate-locked'); }
+})();
+</script>
+  </head>
+  <body>
+  <div id="gate">
+  <div class="wrap">
+  <div class="illus"><img src="medias/illustration-attente.jpg" alt="Illustration : un accompagnement bienveillant pour faire reconnaitre un handicap invisible"></div>
+  <h1>Faire reconna&icirc;tre un handicap invisible</h1>
+<p class="sub">Bilan MDPH &amp; RQTH</p>
+  <hr>
+  <div class="box">
+  <p class="lbl">Acc&egrave;s r&eacute;serv&eacute;</p>
+  <form id="gate-form" autocomplete="off">
+  <input id="gate-input" type="password" inputmode="numeric" placeholder="Mot de passe" aria-label="Mot de passe">
+  <button type="submit">Entrer</button>
+  </form>
+  <p class="err" id="gate-err"></p>
+  </div>
+  </div>
+  </div>
+  <script>
+  (function(){
+  var f = document.getElementById('gate-form');
+var i = document.getElementById('gate-input');
+var e = document.getElementById('gate-err');
+f.addEventListener('submit', function(ev){
+  ev.preventDefault();
+if(i.value.trim() === '1024'){
+try{ localStorage.setItem('bilanmdph-apercu','ok'); }catch(err){}
+document.documentElement.classList.remove('gate-locked');
+e.textContent = '';
+} else {
+e.textContent = 'Mot de passe incorrect.';
+i.value = ''; i.focus();
+  }
+});
+})();
+</script>
+  <main>
+  <h1>Bilan MDPH &amp; RQTH</h1>
+  </main>
+  </body>
+  </html>
