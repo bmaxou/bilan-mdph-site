@@ -50,6 +50,41 @@
 .hero-stat b{ display:block; font-family: var(--serif); font-size: 26px; color: var(--ink); }
 .hero-stat span{ font-size: 13.5px; color: var(--ink-muted); }
 
+/* --- Bascule manuelle du mode d'affichage (clair / sombre / automatique) --- */
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --paper: #15181A;
+  --paper-raised: #1D2124;
+  --ink: #ECE9E0;
+  --ink-muted: #A9AC9F;
+  --border: #33372F;
+  --accent: #8CAAC4;
+  --accent-strong: #B7CCDD;
+  --accent-tint: #212C33;
+  --signal: #E0A874;
+  --signal-tint: #2E2620;
+  --focus: #E0A874;
+}
+:root[data-theme="light"]{
+  color-scheme: light;
+  --paper: #F3F1EA;
+  --paper-raised: #FFFFFF;
+  --ink: #1B1E1A;
+  --ink-muted: #565A50;
+  --border: #E1DCC9;
+  --accent: #2E4356;
+  --accent-strong: #1F2F3D;
+  --accent-tint: #E7EBEE;
+  --signal: #8A4A1E;
+  --signal-tint: #F3E6D9;
+  --focus: #B85C1E;
+}
+.theme-btn{
+  width:38px; height:38px; border-radius:50%; border:1px solid var(--border); background:var(--paper-raised);
+  display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ink); flex:none; padding:0;
+}
+.theme-btn:hover{ border-color: var(--accent); color: var(--accent-strong); }
+
 /* --- Bouton de recherche dans l'en-tête --- */
 .header-search-btn{
   display:inline-flex; align-items:center; gap:8px;
