@@ -85,6 +85,74 @@
 }
 .theme-btn:hover{ border-color: var(--accent); color: var(--accent-strong); }
 
+/* --- Boutons « Lecture et contrastes » / « Glossaire » dans l'en-tête --- */
+.a11y-btn{
+  display:inline-flex; align-items:center; gap:6px;
+  background:none; border:1px solid var(--border); border-radius:9px;
+  padding:8px 12px; font:inherit; font-size:13.5px; color:var(--ink); cursor:pointer; white-space:nowrap;
+}
+.a11y-btn:hover{ border-color:var(--accent); color:var(--accent); }
+.glossary-link{
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:13.5px; color:var(--ink); text-decoration:none; padding:8px 4px; white-space:nowrap;
+}
+.glossary-link:hover{ color:var(--accent); text-decoration:underline; }
+
+/* --- Panneau « Paramètres d'accessibilité » --- */
+.a11y-overlay{ position:fixed; inset:0; z-index:2100; background:rgba(20,20,18,.5); align-items:flex-start; justify-content:center; padding:8vh 18px 18px; }
+.a11y-overlay:not([hidden]){ display:flex; }
+.a11y-panel{ width:100%; max-width:640px; max-height:80vh; overflow-y:auto; background:var(--paper-raised); border-radius:16px; border:1px solid var(--border); box-shadow:0 30px 60px -20px rgba(0,0,0,.35); padding:28px 26px 30px; }
+.a11y-panel-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+.a11y-panel h2{ margin:0; font-size:22px; }
+.a11y-close{ border:1px solid var(--border); background:none; border-radius:8px; padding:7px 14px; font-size:13px; color:var(--ink); cursor:pointer; white-space:nowrap; }
+.a11y-close:hover{ border-color:var(--accent); color:var(--accent); }
+.a11y-row{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0; border-top:1px solid var(--border); flex-wrap:wrap; }
+.a11y-row:first-of-type{ border-top:none; }
+.a11y-row-label{ font-weight:600; font-size:15px; min-width:180px; }
+.a11y-options{ display:flex; gap:18px; flex-wrap:wrap; }
+.a11y-options label{ display:flex; align-items:center; gap:6px; font-size:14px; cursor:pointer; }
+
+/* --- États d'accessibilité, appliqués sur <html> (après les blocs de thème, pour gagner la cascade) --- */
+html.a11y-contrast-fort{
+  --paper:#FFFFFF; --paper-raised:#FFFFFF; --ink:#000000; --ink-muted:#000000; --border:#000000;
+  --accent:#000000; --accent-strong:#000000; --accent-tint:#EAEAEA; --signal:#000000; --signal-tint:#EAEAEA;
+  color-scheme: light;
+}
+html.a11y-contrast-inverse{
+  --paper:#000000; --paper-raised:#0D0D0D; --ink:#FFFFFF; --ink-muted:#EFEFEF; --border:#FFFFFF;
+  --accent:#FFD400; --accent-strong:#FFE873; --accent-tint:#1A1A1A; --signal:#FFD400; --signal-tint:#1A1A1A;
+  color-scheme: dark;
+}
+html.a11y-dyslexia, html.a11y-dyslexia body{
+  font-family: Verdana, Arial, sans-serif !important; letter-spacing:.01em; word-spacing:.06em;
+}
+html.a11y-leading article, html.a11y-leading .lede{ line-height:2 !important; }
+article p{ text-align:justify; }
+html.a11y-no-justify article p{ text-align:left !important; }
+html.a11y-big-targets a, html.a11y-big-targets button{ min-height:44px; }
+html.a11y-big-targets .primary-nav a, html.a11y-big-targets .page-card, html.a11y-big-targets .theme-nav button{ padding-top:12px; padding-bottom:12px; }
+
+/* --- Barre « Écouter / Partager » en tête d'article --- */
+.page-tools{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  margin: 0 0 26px; padding-bottom:18px; border-bottom:1px solid var(--border);
+}
+.listen-btn{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--paper-raised); border:1px solid var(--border); border-radius:9px;
+  padding:9px 16px; font:inherit; font-size:13.5px; font-weight:600; color:var(--ink); cursor:pointer;
+}
+.listen-btn:hover{ border-color:var(--accent); color:var(--accent-strong); }
+.listen-btn.is-playing{ border-color:var(--accent); color:var(--accent-strong); background:var(--accent-tint); }
+.share-tools{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.share-label{ font-size:13px; color:var(--ink-muted); margin-right:2px; }
+.share-btn{
+  width:34px; height:34px; border-radius:50%; border:1px solid var(--border); background:var(--paper-raised);
+  display:flex; align-items:center; justify-content:center; color:var(--ink); cursor:pointer; text-decoration:none; padding:0;
+}
+.share-btn:hover{ border-color:var(--accent); color:var(--accent-strong); }
+.share-btn svg{ width:15px; height:15px; }
+
 /* --- Bouton de recherche dans l'en-tête --- */
 .header-search-btn{
   display:inline-flex; align-items:center; gap:8px;
