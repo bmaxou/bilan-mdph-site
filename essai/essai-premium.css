@@ -64,6 +64,9 @@
   --signal: #E0A874;
   --signal-tint: #2E2620;
   --focus: #E0A874;
+  --gov-blue: #8B8BF5;
+  --gov-blue-strong: #B1B1FF;
+  --gov-blue-tint: #23234A;
 }
 :root[data-theme="light"]{
   color-scheme: light;
@@ -78,6 +81,14 @@
   --signal: #8A4A1E;
   --signal-tint: #F3E6D9;
   --focus: #B85C1E;
+  --gov-blue: #000091;
+  --gov-blue-strong: #1212FF;
+  --gov-blue-tint: #E3E3FD;
+}
+/* --- Couleur « gadgets d'accessibilité », valeur par défaut + suivi du mode système --- */
+:root{ --gov-blue: #000091; --gov-blue-strong: #1212FF; --gov-blue-tint: #E3E3FD; }
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --gov-blue: #8B8BF5; --gov-blue-strong: #B1B1FF; --gov-blue-tint: #23234A; }
 }
 .theme-btn{
   width:38px; height:38px; border-radius:50%; border:1px solid var(--border); background:var(--paper-raised);
@@ -88,15 +99,15 @@
 /* --- Boutons « Lecture et contrastes » / « Glossaire » dans l'en-tête --- */
 .a11y-btn{
   display:inline-flex; align-items:center; gap:6px;
-  background:none; border:1px solid var(--border); border-radius:9px;
-  padding:8px 12px; font:inherit; font-size:13.5px; color:var(--ink); cursor:pointer; white-space:nowrap;
+  background:none; border:1px solid var(--gov-blue); border-radius:9px;
+  padding:8px 12px; font:inherit; font-size:13.5px; color:var(--gov-blue); cursor:pointer; white-space:nowrap;
 }
-.a11y-btn:hover{ border-color:var(--accent); color:var(--accent); }
+.a11y-btn:hover{ background:var(--gov-blue-tint); border-color:var(--gov-blue-strong); color:var(--gov-blue-strong); }
 .glossary-link{
   display:inline-flex; align-items:center; gap:6px;
-  font-size:13.5px; color:var(--ink); text-decoration:none; padding:8px 4px; white-space:nowrap;
+  font-size:13.5px; color:var(--gov-blue); text-decoration:none; padding:8px 4px; white-space:nowrap; font-weight:600;
 }
-.glossary-link:hover{ color:var(--accent); text-decoration:underline; }
+.glossary-link:hover{ color:var(--gov-blue-strong); text-decoration:underline; }
 
 /* --- Panneau « Paramètres d'accessibilité » --- */
 .a11y-overlay{ position:fixed; inset:0; z-index:2100; background:rgba(20,20,18,.5); align-items:flex-start; justify-content:center; padding:8vh 18px 18px; }
@@ -104,13 +115,15 @@
 .a11y-panel{ width:100%; max-width:640px; max-height:80vh; overflow-y:auto; background:var(--paper-raised); border-radius:16px; border:1px solid var(--border); box-shadow:0 30px 60px -20px rgba(0,0,0,.35); padding:28px 26px 30px; }
 .a11y-panel-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
 .a11y-panel h2{ margin:0; font-size:22px; }
-.a11y-close{ border:1px solid var(--border); background:none; border-radius:8px; padding:7px 14px; font-size:13px; color:var(--ink); cursor:pointer; white-space:nowrap; }
-.a11y-close:hover{ border-color:var(--accent); color:var(--accent); }
+.a11y-close{ border:1px solid var(--gov-blue); background:none; border-radius:8px; padding:7px 14px; font-size:13px; color:var(--gov-blue); cursor:pointer; white-space:nowrap; }
+.a11y-close:hover{ background:var(--gov-blue-tint); border-color:var(--gov-blue-strong); color:var(--gov-blue-strong); }
+.a11y-panel{ border-top:4px solid var(--gov-blue); }
 .a11y-row{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0; border-top:1px solid var(--border); flex-wrap:wrap; }
 .a11y-row:first-of-type{ border-top:none; }
 .a11y-row-label{ font-weight:600; font-size:15px; min-width:180px; }
 .a11y-options{ display:flex; gap:18px; flex-wrap:wrap; }
 .a11y-options label{ display:flex; align-items:center; gap:6px; font-size:14px; cursor:pointer; }
+.a11y-options input[type="radio"]{ accent-color: var(--gov-blue); }
 
 /* --- États d'accessibilité, appliqués sur <html> (après les blocs de thème, pour gagner la cascade) --- */
 html.a11y-contrast-fort{
@@ -139,18 +152,18 @@ html.a11y-big-targets .primary-nav a, html.a11y-big-targets .page-card, html.a11
 }
 .listen-btn{
   display:inline-flex; align-items:center; gap:8px;
-  background:var(--paper-raised); border:1px solid var(--border); border-radius:9px;
-  padding:9px 16px; font:inherit; font-size:13.5px; font-weight:600; color:var(--ink); cursor:pointer;
+  background:var(--paper-raised); border:1px solid var(--gov-blue); border-radius:9px;
+  padding:9px 16px; font:inherit; font-size:13.5px; font-weight:600; color:var(--gov-blue); cursor:pointer;
 }
-.listen-btn:hover{ border-color:var(--accent); color:var(--accent-strong); }
-.listen-btn.is-playing{ border-color:var(--accent); color:var(--accent-strong); background:var(--accent-tint); }
+.listen-btn:hover{ border-color:var(--gov-blue-strong); color:var(--gov-blue-strong); background:var(--gov-blue-tint); }
+.listen-btn.is-playing{ border-color:var(--gov-blue-strong); color:var(--gov-blue-strong); background:var(--gov-blue-tint); }
 .share-tools{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
 .share-label{ font-size:13px; color:var(--ink-muted); margin-right:2px; }
 .share-btn{
-  width:34px; height:34px; border-radius:50%; border:1px solid var(--border); background:var(--paper-raised);
-  display:flex; align-items:center; justify-content:center; color:var(--ink); cursor:pointer; text-decoration:none; padding:0;
+  width:34px; height:34px; border-radius:50%; border:1px solid var(--gov-blue); background:var(--paper-raised);
+  display:flex; align-items:center; justify-content:center; color:var(--gov-blue); cursor:pointer; text-decoration:none; padding:0;
 }
-.share-btn:hover{ border-color:var(--accent); color:var(--accent-strong); }
+.share-btn:hover{ border-color:var(--gov-blue-strong); color:var(--gov-blue-strong); background:var(--gov-blue-tint); }
 .share-btn svg{ width:15px; height:15px; }
 
 /* --- Bouton de recherche dans l'en-tête --- */
