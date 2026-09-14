@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+<title>Glossaire MDPH — Bilan MDPH &amp; RQTH</title>
+<meta name="description" content="Glossaire des sigles et termes courants d'un dossier MDPH : MDPH, CDAPH, AAH, RQTH, PCH, AEEH, CMI, Cerfa, TND, CNSA, retentissement fonctionnel, projet de vie.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=fraunces@500,600,700&f[]=general-sans@400,500,600&display=swap">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/essai/essai-premium.css">
+<style>
+.glossary-list{ margin-top:20px; }
+.glossary-term{ border-top:1px solid var(--border); padding:22px 0; }
+.glossary-term:first-child{ border-top:none; }
+.glossary-term h3{ margin:0 0 6px; font-size:18px; }
+.glossary-term .sigle{ color:var(--accent-strong); font-weight:700; }
+.glossary-term p{ margin:0; color:var(--ink-muted); }
+.glossary-nav{ display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 8px; }
+.glossary-nav a{
+  border:1px solid var(--border); border-radius:999px; padding:6px 14px; font-size:13.5px;
+  color:var(--ink); text-decoration:none; background:var(--paper-raised);
+}
+.glossary-nav a:hover{ border-color:var(--accent); color:var(--accent-strong); }
+</style>
+</head>
+<body>
+<div class="essai-banner">Version d'essai — page de travail, pas encore en ligne publiquement</div>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="/essai/">Bilan MDPH &amp; RQTH<small>Cabinet Bouche &amp; Chmura</small></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Ouvrir le menu">Menu ☰</button>
+    <nav class="primary-nav" aria-label="Navigation principale">
+      <a href="/essai/">Accueil</a>
+      <a href="/bilan-mdph-adulte">Bilan MDPH adulte</a>
+      <a href="/retentissement-fonctionnel">Retentissement fonctionnel</a>
+      <a href="/bilan-a-distance/">Bilan à distance</a>
+      <a href="/equipe">Équipe</a>
+    </nav>
+    <button type="button" class="a11y-btn" id="a11yOpen">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18" stroke-linecap="round"/></svg>
+      Lecture et contrastes
+    </button>
+    <a class="glossary-link" href="/essai/glossaire/" aria-current="page">Glossaire</a>
+    <button type="button" class="header-search-btn" data-site-search-open>
+      <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M13.3 13.3 18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      Rechercher <kbd>⌘K</kbd>
+    </button>
+    <button type="button" class="theme-btn" id="themeToggle" aria-label="Changer le mode d'affichage">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.34-.02-.67-.05-1A7 7 0 0 1 12 3z"/></svg>
+    </button>
+    <a class="header-cta" href="https://www.doctolib.fr/A-COMPLETER-URL-DOCTOLIB">Prendre rendez-vous</a>
+  </div>
+</header>
+
+<div class="a11y-overlay" id="a11yOverlay" role="dialog" aria-modal="true" aria-label="Paramètres d'accessibilité" hidden>
+  <div class="a11y-panel">
+    <div class="a11y-panel-head">
+      <h2>Paramètres d'accessibilité</h2>
+      <button type="button" class="a11y-close" id="a11yClose">Fermer ✕</button>
+    </div>
+    <div class="a11y-row" data-a11y-group="contrast">
+      <span class="a11y-row-label">Contrastes</span>
+      <span class="a11y-options">
+        <label><input type="radio" name="a11y-contrast" value="defaut"> Par défaut</label>
+        <label><input type="radio" name="a11y-contrast" value="renforce"> Renforcer</label>
+        <label><input type="radio" name="a11y-contrast" value="inverse"> Inverser</label>
+      </span>
+    </div>
+    <div class="a11y-row" data-a11y-group="dyslexia">
+      <span class="a11y-row-label">Police (dyslexie)</span>
+      <span class="a11y-options">
+        <label><input type="radio" name="a11y-dyslexia" value="defaut"> Par défaut</label>
+        <label><input type="radio" name="a11y-dyslexia" value="adapter"> Adapter</label>
+      </span>
+    </div>
+    <div class="a11y-row" data-a11y-group="leading">
+      <span class="a11y-row-label">Interlignage</span>
+      <span class="a11y-options">
+        <label><input type="radio" name="a11y-leading" value="defaut"> Par défaut</label>
+        <label><input type="radio" name="a11y-leading" value="augmenter"> Augmenter</label>
+      </span>
+    </div>
+    <div class="a11y-row" data-a11y-group="justify">
+      <span class="a11y-row-label">Justification</span>
+      <span class="a11y-options">
+        <label><input type="radio" name="a11y-justify" value="defaut"> Par défaut</label>
+        <label><input type="radio" name="a11y-justify" value="supprimer"> Supprimer</label>
+      </span>
+    </div>
+    <div class="a11y-row" data-a11y-group="targets">
+      <span class="a11y-row-label">Augmenter la taille des zones interactives</span>
+      <span class="a11y-options">
+        <label><input type="radio" name="a11y-targets" value="defaut"> Par défaut</label>
+        <label><input type="radio" name="a11y-targets" value="augmenter"> Augmenter</label>
+      </span>
+    </div>
+  </div>
+</div>
+
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <ol><li><a href="/essai/">Accueil</a></li><li aria-current="page">Glossaire</li></ol>
+</nav>
+<main id="contenu">
+  <article>
+
+<h1 class="reveal">Glossaire du dossier MDPH</h1>
+<p class="reveal">Les sigles et termes les plus fréquents d'une démarche MDPH ou RQTH, expliqués simplement. Ce glossaire ne remplace pas un conseil personnalisé sur votre dossier.</p>
+
+<div class="glossary-nav reveal">
+  <a href="#mdph">MDPH</a><a href="#cdaph">CDAPH</a><a href="#aah">AAH</a><a href="#rqth">RQTH</a><a href="#pch">PCH</a><a href="#aeeh">AEEH</a><a href="#cmi">CMI</a><a href="#cerfa-demande">Cerfa 15692</a><a href="#cerfa-medical">Cerfa 15695</a><a href="#tnd">TND</a><a href="#cnsa">CNSA</a><a href="#retentissement">Retentissement fonctionnel</a><a href="#projet-de-vie">Projet de vie</a><a href="#bilan-neuropsy">Bilan neuropsychologique</a><a href="#bilan-psy">Bilan psychologique</a>
+</div>
+
+<div class="glossary-list reveal">
+  <div class="glossary-term" id="mdph"><h3><span class="sigle">MDPH</span> — Maison départementale des personnes handicapées</h3><p>Le guichet unique, dans chaque département, pour l'accès aux droits et prestations des personnes en situation de handicap : dépôt du dossier, évaluation par l'équipe pluridisciplinaire, puis décision de la CDAPH.</p></div>
+  <div class="glossary-term" id="cdaph"><h3><span class="sigle">CDAPH</span> — Commission des droits et de l'autonomie des personnes handicapées</h3><p>La commission qui statue sur les demandes déposées à la MDPH (AAH, RQTH, PCH, AEEH, CMI, orientation…) et notifie sa décision. C'est elle, et elle seule, qui décide — aucun bilan ni certificat ne préjuge de sa décision.</p></div>
+  <div class="glossary-term" id="aah"><h3><span class="sigle">AAH</span> — Allocation aux adultes handicapés</h3><p>Une aide financière versée aux adultes en situation de handicap, sous conditions de taux d'incapacité et de ressources, attribuée par la CDAPH.</p></div>
+  <div class="glossary-term" id="rqth"><h3><span class="sigle">RQTH</span> — Reconnaissance de la qualité de travailleur handicapé</h3><p>Un statut qui ouvre l'accès à des dispositifs d'accompagnement et d'aménagement dans l'emploi. Elle ne nécessite pas un handicap visible : c'est le retentissement sur la capacité à exercer un emploi qui est évalué.</p></div>
+  <div class="glossary-term" id="pch"><h3><span class="sigle">PCH</span> — Prestation de compensation du handicap</h3><p>Une aide destinée à financer les besoins liés à la perte d'autonomie (aide humaine, technique, aménagement du logement ou du véhicule, etc.), attribuée par la CDAPH.</p></div>
+  <div class="glossary-term" id="aeeh"><h3><span class="sigle">AEEH</span> — Allocation d'éducation de l'enfant handicapé</h3><p>Une aide destinée aux familles pour couvrir les frais liés à l'éducation et aux soins d'un enfant en situation de handicap.</p></div>
+  <div class="glossary-term" id="cmi"><h3><span class="sigle">CMI</span> — Carte mobilité inclusion</h3><p>Une carte (mentions « invalidité », « priorité » ou « stationnement ») qui facilite les déplacements et l'accès à certains droits, attribuée par la CDAPH.</p></div>
+  <div class="glossary-term" id="cerfa-demande"><h3><span class="sigle">Cerfa n°15692*01</span> — Formulaire de demande MDPH</h3><p>Le formulaire administratif de demande auprès de la MDPH, qui comprend notamment la section « projet de vie ». C'est, avec le certificat médical, l'une des deux pièces obligatoires du dossier.</p></div>
+  <div class="glossary-term" id="cerfa-medical"><h3><span class="sigle">Cerfa n°15695*01</span> — Certificat médical MDPH</h3><p>Le certificat médical du dossier, daté de moins de 12 mois, rempli exclusivement par un médecin (traitant ou spécialiste). Un bilan neuropsychologique ou psychologique ne le remplace pas — voir <a href="/certificat-medical-mdph">la page dédiée</a>.</p></div>
+  <div class="glossary-term" id="tnd"><h3><span class="sigle">TND</span> — Troubles du neurodéveloppement</h3><p>Une famille de troubles apparaissant durant le développement (dont le TDAH et le TSA). Depuis février 2026, un questionnaire complémentaire facultatif existe pour les documenter — voir <a href="/questionnaire-complementaire-tnd">la page dédiée</a>.</p></div>
+  <div class="glossary-term" id="cnsa"><h3><span class="sigle">CNSA</span> — Caisse nationale de solidarité pour l'autonomie</h3><p>L'organisme public qui finance et pilote, au niveau national, les politiques d'autonomie et le fonctionnement des MDPH.</p></div>
+  <div class="glossary-term" id="retentissement"><h3>Retentissement fonctionnel</h3><p>La description concrète et observable de ce qu'un trouble change réellement dans la vie quotidienne, sociale, scolaire ou professionnelle d'une personne. C'est cette description, plus que le seul diagnostic, que l'équipe pluridisciplinaire exploite pour statuer — voir <a href="/retentissement-fonctionnel">notre guide</a>.</p></div>
+  <div class="glossary-term" id="projet-de-vie"><h3>Projet de vie</h3><p>La section du formulaire de demande où la personne exprime, avec ses propres mots, sa situation, ses difficultés et les aides souhaitées. Facultative mais fortement recommandée — voir <a href="/projet-de-vie-mdph">comment le rédiger</a>.</p></div>
+  <div class="glossary-term" id="bilan-neuropsy"><h3>Bilan neuropsychologique</h3><p>Une évaluation des fonctions attentionnelles, mnésiques, exécutives et instrumentales, indiquée notamment pour documenter un trouble cognitif, un TDAH ou un TSA à l'âge adulte — voir <a href="/bilan-neuropsychologique-mdph">la page dédiée</a>.</p></div>
+  <div class="glossary-term" id="bilan-psy"><h3>Bilan psychologique</h3><p>Une évaluation du fonctionnement psychique et de son retentissement, en complément du certificat médical, indiquée notamment pour un handicap psychique — voir <a href="/bilan-psychologique-mdph">la page dédiée</a>.</p></div>
+</div>
+
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <h4>Bilan MDPH &amp; RQTH</h4>
+        <p style="font-size:14px;color:var(--ink-muted);max-width:36ch;">
+          Bilans neuropsychologiques et psychologiques pouvant appuyer une démarche MDPH ou RQTH.
+          Cabinet Bouche &amp; Chmura, Colombes — consultations en Île-de-France, en Ardèche et en téléconsultation.
+        </p>
+      </div>
+      <div><h4>Bilans</h4><ul><li><a href="/bilan-mdph-adulte">Bilan MDPH adulte</a></li><li><a href="/bilan-neuropsychologique-mdph">Bilan neuropsychologique</a></li><li><a href="/bilan-psychologique-mdph">Bilan psychologique</a></li><li><a href="/bilan-a-distance/">Bilan à distance</a></li><li><a href="/bilan-en-deux-jours">Bilan en un ou deux jours</a></li><li><a href="/prix-bilan-mdph">Prix et remboursement</a></li></ul></div><div><h4>Ressources</h4><ul><li><a href="/retentissement-fonctionnel">Du trouble au retentissement</a></li><li><a href="/checklist-dossier-mdph-2026">Checklist dossier MDPH</a></li><li><a href="/questionnaire-complementaire-tnd">Questionnaire complémentaire TND</a></li><li><a href="/reforme-formulaire-mdph-2026">Réforme du formulaire 2026</a></li><li><a href="/dossier-mdph-adulte">Constituer un dossier</a></li><li><a href="/certificat-medical-mdph">Certificat médical</a></li><li><a href="/projet-de-vie-mdph">Projet de vie</a></li><li><a href="/pieces-a-joindre-dossier-mdph">Pièces à joindre</a></li></ul></div><div><h4>Situations</h4><ul><li><a href="/handicap-cognitif-mdph">Handicap cognitif</a></li><li><a href="/handicap-psychique-mdph">Handicap psychique</a></li><li><a href="/handicap-invisible-rqth">Handicap invisible et RQTH</a></li><li><a href="/tdah-adulte-mdph">TDAH adulte et MDPH</a></li><li><a href="/tdah-rqth">TDAH et RQTH</a></li><li><a href="/autisme-adulte-mdph/">Autisme adulte et MDPH</a></li></ul></div>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 Cabinet Bouche &amp; Chmura</span>
+      <span>
+        <a href="/equipe">Équipe</a> ·
+        <a href="/lieux-de-consultation">Lieux de consultation</a> ·
+        <a href="/mentions-legales">Mentions légales</a> ·
+        <a href="/confidentialite">Confidentialité</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/main.js"></script>
+<script src="/essai/reveal.js"></script>
+<script src="/essai/site-search.js"></script>
+<script>
+(function(){
+  var btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    var root = document.documentElement;
+    var current = root.getAttribute('data-theme');
+    if (current === 'dark'){ root.setAttribute('data-theme', 'light'); }
+    else if (current === 'light'){ root.removeAttribute('data-theme'); }
+    else { root.setAttribute('data-theme', 'dark'); }
+  });
+})();
+(function(){
+  var STORAGE_KEY = 'bmdph-a11y';
+  function readPrefs(){
+    try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }catch(e){ return {}; }
+  }
+  function writePrefs(p){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(p)); }catch(e){} }
+  function apply(prefs){
+    var html = document.documentElement;
+    html.classList.toggle('a11y-contrast-fort', prefs.contrast === 'renforce');
+    html.classList.toggle('a11y-contrast-inverse', prefs.contrast === 'inverse');
+    html.classList.toggle('a11y-dyslexia', prefs.dyslexia === 'adapter');
+    html.classList.toggle('a11y-leading', prefs.leading === 'augmenter');
+    html.classList.toggle('a11y-no-justify', prefs.justify === 'supprimer');
+    html.classList.toggle('a11y-big-targets', prefs.targets === 'augmenter');
+  }
+  var prefs = readPrefs();
+  apply(prefs);
+
+  var overlay = document.getElementById('a11yOverlay');
+  var openBtn = document.getElementById('a11yOpen');
+  var closeBtn = document.getElementById('a11yClose');
+  if (openBtn && overlay) openBtn.addEventListener('click', function(){ overlay.hidden = false; });
+  if (closeBtn && overlay) closeBtn.addEventListener('click', function(){ overlay.hidden = true; });
+  if (overlay) overlay.addEventListener('click', function(e){ if (e.target === overlay) overlay.hidden = true; });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && overlay && !overlay.hidden) overlay.hidden = true;
+  });
+
+  document.querySelectorAll('[data-a11y-group]').forEach(function(group){
+    var key = group.getAttribute('data-a11y-group');
+    var val = prefs[key] || 'defaut';
+    var radio = group.querySelector('input[value="' + val + '"]');
+    if (radio) radio.checked = true;
+    group.querySelectorAll('input[type=radio]').forEach(function(input){
+      input.addEventListener('change', function(){
+        prefs[key] = input.value;
+        writePrefs(prefs);
+        apply(prefs);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
