@@ -17,5 +17,11 @@ RewriteRule ^ - [L]
 RewriteCond %{HTTP_COOKIE} !bmdph_gate=c74f96e7453df185ebd571aa6990dff8bd19201fdb4d9b17
 RewriteRule ^(.*)$ /gate.php?r=%{REQUEST_URI} [L,QSA]
 
+# Pages livrées en fichier plat (nom-de-page.html) mais servies avec une URL propre
+# (nom-de-page/), pour permettre un dépôt en un seul geste sur GitHub sans passer par
+# des sous-dossiers imbriqués. Ne s'applique qu'une fois le mot de passe validé (la
+# règle ci-dessus a laissé passer la requête).
+RewriteRule ^(bilan-en-deux-jours|bilan-mdph-adulte|bilan-neuropsychologique-mdph|bilan-psychologique-mdph|certificat-medical-mdph|checklist-dossier-mdph-2026|confidentialite|dossier-mdph-adulte|equipe|handicap-cognitif-mdph|handicap-invisible-rqth|handicap-psychique-mdph|lieux-de-consultation|mentions-legales|pieces-a-joindre-dossier-mdph|prix-bilan-mdph|projet-de-vie-mdph|questionnaire-complementaire-tnd|reforme-formulaire-mdph-2026|retentissement-fonctionnel|tdah-adulte-mdph|tdah-rqth)/?$ /$1.html [L]
+
 # Page d'erreur 404 du site (une fois passé le mot de passe)
 ErrorDocument 404 /404.html
