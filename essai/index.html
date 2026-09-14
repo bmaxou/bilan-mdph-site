@@ -16,9 +16,29 @@
 <div class="essai-banner">Version d'essai — page de travail, pas encore en ligne publiquement</div>
 <a class="skip-link" href="#contenu">Aller au contenu</a>
 <header class="site-header">
-  <div class="bar">
+  <div class="bar bar-top">
     <a class="brand" href="/essai/">Bilan MDPH &amp; RQTH<small>Cabinet Bouche &amp; Chmura</small></a>
-    <button class="nav-toggle" aria-expanded="false" aria-label="Ouvrir le menu">Menu ☰</button>
+    <div class="bar-top-right">
+      <div class="header-utility-links">
+        <button type="button" class="a11y-btn" id="a11yOpen">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18" stroke-linecap="round"/></svg>
+          Lecture et contrastes
+        </button>
+        <a class="glossary-link" href="/essai/glossaire/">Glossaire</a>
+        <button type="button" class="theme-btn" id="themeToggle" aria-label="Changer le mode d'affichage">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.34-.02-.67-.05-1A7 7 0 0 1 12 3z"/></svg>
+        </button>
+      </div>
+      <button type="button" class="site-search-bar" data-site-search-open aria-label="Rechercher sur le site">
+        <span class="site-search-bar-text">Rechercher sur le site</span>
+        <span class="site-search-bar-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M13.3 13.3 18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="bar bar-nav">
+    <button class="nav-toggle" aria-expanded="false" aria-label="Ouvrir le menu">Menu &#9776;</button>
     <nav class="primary-nav" aria-label="Navigation principale">
       <a href="/essai/" aria-current="page">Accueil</a>
       <a href="/bilan-mdph-adulte">Bilan MDPH adulte</a>
@@ -26,18 +46,6 @@
       <a href="/bilan-a-distance/">Bilan à distance</a>
       <a href="/equipe">Équipe</a>
     </nav>
-    <button type="button" class="a11y-btn" id="a11yOpen">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18" stroke-linecap="round"/></svg>
-      Lecture et contrastes
-    </button>
-    <a class="glossary-link" href="/essai/glossaire/">Glossaire</a>
-    <button type="button" class="header-search-btn" data-site-search-open>
-      <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M13.3 13.3 18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      Rechercher <kbd>⌘K</kbd>
-    </button>
-    <button type="button" class="theme-btn" id="themeToggle" aria-label="Changer le mode d'affichage">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.34-.02-.67-.05-1A7 7 0 0 1 12 3z"/></svg>
-    </button>
     <a class="header-cta" href="https://www.doctolib.fr/A-COMPLETER-URL-DOCTOLIB">Prendre rendez-vous</a>
   </div>
 </header>
