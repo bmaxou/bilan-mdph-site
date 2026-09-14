@@ -30,6 +30,9 @@
       <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M13.3 13.3 18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       Rechercher <kbd>⌘K</kbd>
     </button>
+    <button type="button" class="theme-btn" id="themeToggle" aria-label="Changer le mode d'affichage">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.34-.02-.67-.05-1A7 7 0 0 1 12 3z"/></svg>
+    </button>
     <a class="header-cta" href="https://www.doctolib.fr/A-COMPLETER-URL-DOCTOLIB">Prendre rendez-vous</a>
   </div>
 </header>
@@ -178,6 +181,17 @@
         c.style.display = (theme === 'all' || c.getAttribute('data-theme') === theme) ? '' : 'none';
       });
     });
+  });
+})();
+(function(){
+  var btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    var root = document.documentElement;
+    var current = root.getAttribute('data-theme');
+    if (current === 'dark'){ root.setAttribute('data-theme', 'light'); }
+    else if (current === 'light'){ root.removeAttribute('data-theme'); }
+    else { root.setAttribute('data-theme', 'dark'); }
   });
 })();
 </script>
