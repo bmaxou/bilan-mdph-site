@@ -1,0 +1,21 @@
+# Cabinet Bouche & Chmura — bilan-mdph.fr
+# Protection d'accès en phase privée (avant validation par le cabinet et mise en ligne publique).
+# Mécanisme : gate.php + cookie, appliqué côté serveur via mod_rewrite (aucune vérification en
+# JavaScript côté client). Voir NOTE-DE-LIVRAISON.md pour la procédure de retrait au passage en public.
+
+RewriteEngine On
+RewriteBase /
+
+# Fichiers toujours accessibles sans mot de passe : la page de connexion elle-même,
+# les assets techniques (CSS/JS/polices) et robots.txt (lu par les robots avant tout)
+RewriteCond %{REQUEST_URI} ^/gate\.php$ [OR]
+RewriteCond %{REQUEST_URI} ^/robots\.txt$ [OR]
+RewriteCond %{REQUEST_URI} ^/assets/
+RewriteRule ^ - [L]
+
+# Tout le reste exige le cookie posé par gate.php après saisie du bon mot de passe
+RewriteCond %{HTTP_COOKIE} !bmdph_gate=c74f96e7453df185ebd571aa6990dff8bd19201fdb4d9b17
+RewriteRule ^(.*)$ /gate.php?r=%{REQUEST_URI} [L,QSA]
+
+# Page d'erreur 404 du site (une fois passé le mot de passe)
+ErrorDocument 404 /404.html
