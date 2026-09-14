@@ -347,21 +347,28 @@ body.site-search-lock{ overflow: hidden; }
   .site-search-bar-icon{ border-radius:4px; }
 }
 
-/* --- Écouter / Partager, restyles au pixel pres du site de reference : bouton "Écouter" compact
-   (fond blanc, liseré bleu, coins presque droits) puis "Partager la page" empilé en dessous,
-   avec des icônes carrées sans bordure --- */
-.page-tools{
-  display:flex; flex-direction:column; align-items:flex-start; gap:16px;
-  margin:0 0 26px; padding-bottom:18px; border-bottom:1px solid var(--border);
-}
+/* --- Écouter / Partager, restyles au pixel pres du site de reference : bouton "Écouter" en deux
+   cases separees par un trait (menu + lecture), place AVANT le titre ; "Partager la page" placé
+   APRÈS le titre, empilé, avec des icônes carrées sans bordure --- */
+.listen-tool{ margin:0 0 10px; }
 .listen-btn{
-  display:inline-flex; align-items:center; gap:6px;
+  display:inline-flex; align-items:stretch; height:30px; padding:0; margin:0;
   background:var(--paper); border:1px solid var(--gov-blue); border-radius:2px;
-  height:30px; padding:0 10px; font:inherit; font-size:12px; font-weight:400; color:var(--gov-blue); cursor:pointer;
+  font:inherit; cursor:pointer; overflow:hidden;
+}
+.listen-btn-menu{
+  display:flex; align-items:center; justify-content:center;
+  width:30px; flex:none; border-right:1px solid var(--gov-blue); color:var(--gov-blue);
+}
+.listen-btn-play{
+  display:flex; align-items:center; gap:6px;
+  padding:0 10px; font-size:12px; font-weight:400; color:var(--gov-blue); white-space:nowrap;
 }
 .listen-btn:hover{ background:var(--gov-blue-tint); }
 .listen-btn.is-playing{ background:var(--gov-blue-tint); }
-.share-tools{ display:block; }
+.share-tools{
+  display:block; margin:0 0 26px; padding-bottom:18px; border-bottom:1px solid var(--border);
+}
 .share-label{ margin:0 0 10px; font-size:16px; font-weight:400; color:var(--ink); }
 .share-row{ display:flex; align-items:center; gap:0; flex-wrap:wrap; }
 .share-btn{
