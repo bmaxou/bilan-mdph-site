@@ -295,3 +295,95 @@ body.site-search-lock{ overflow: hidden; }
 @media (prefers-reduced-motion: reduce){
   .js .reveal{ transition: none; opacity:1; transform:none; }
 }
+
+
+/* --- En-tete en deux rangees : marque + recherche/CTA en haut, menu + outils en dessous ---
+   (rapproche du site de reference : barre de recherche a droite, en-tete separe du menu) */
+.bar-top{
+  padding-bottom:14px;
+  border-bottom:1px solid var(--border);
+}
+.bar-top-right{
+  display:flex; align-items:center; gap:12px; margin-left:auto; flex-wrap:wrap;
+}
+.bar-nav{
+  padding-top:12px; padding-bottom:12px; gap:14px;
+}
+.bar-nav-tools{
+  display:flex; align-items:center; gap:10px; margin-left:auto; flex-wrap:wrap;
+}
+@media (max-width: 860px){
+  .bar-nav{ position:relative; }
+  .bar-nav-tools{ margin-left:0; order:2; }
+  nav.primary-nav{ order:3; }
+}
+@media (max-width: 560px){
+  .bar-top{ flex-direction:column; align-items:flex-start; }
+  .bar-top-right{ width:100%; align-items:flex-start; }
+  .site-search-bar{ width:100%; }
+}
+
+/* --- Recherche : barre au pixel pres du site de reference (fond gris, ligne bleue sous le champ,
+   loupe blanche sur carre bleu a droite) : bouton decoratif qui ouvre l'overlay de recherche existant --- */
+.header-utility-links{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.site-search-bar{
+  display:flex; align-items:stretch; height:40px; border:none; padding:0; margin:0;
+  font:inherit; cursor:pointer; border-radius:4px; overflow:hidden; background:none;
+}
+.site-search-bar-text{
+  display:flex; align-items:center;
+  background:var(--paper-raised); color:var(--ink-muted);
+  padding:0 14px; font-size:14px; white-space:nowrap;
+  box-shadow: inset 0 -2px 0 0 var(--gov-blue);
+}
+.site-search-bar-icon{
+  display:flex; align-items:center; justify-content:center; flex:none;
+  width:40px; background:var(--gov-blue); color:#fff;
+}
+.site-search-bar:hover .site-search-bar-icon{ background:var(--gov-blue-strong); }
+@media (max-width:560px){
+  .site-search-bar-text{ display:none; }
+  .site-search-bar{ border-radius:4px; }
+  .site-search-bar-icon{ border-radius:4px; }
+}
+
+/* --- Écouter / Partager, restyles au pixel pres du site de reference : bouton "Écouter" compact
+   (fond blanc, liseré bleu, coins presque droits) puis "Partager la page" empilé en dessous,
+   avec des icônes carrées sans bordure --- */
+.page-tools{
+  display:flex; flex-direction:column; align-items:flex-start; gap:16px;
+  margin:0 0 26px; padding-bottom:18px; border-bottom:1px solid var(--border);
+}
+.listen-btn{
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--paper); border:1px solid var(--gov-blue); border-radius:2px;
+  height:30px; padding:0 10px; font:inherit; font-size:12px; font-weight:400; color:var(--gov-blue); cursor:pointer;
+}
+.listen-btn:hover{ background:var(--gov-blue-tint); }
+.listen-btn.is-playing{ background:var(--gov-blue-tint); }
+.share-tools{ display:block; }
+.share-label{ margin:0 0 10px; font-size:16px; font-weight:400; color:var(--ink); }
+.share-row{ display:flex; align-items:center; gap:0; flex-wrap:wrap; }
+.share-btn{
+  width:40px; height:44px; border-radius:0; border:none; background:none;
+  display:flex; align-items:center; justify-content:center; color:var(--gov-blue); cursor:pointer; text-decoration:none; padding:0;
+}
+.share-btn:hover{ background:var(--gov-blue-tint); }
+.share-btn svg{ width:20px; height:20px; }
+
+/* --- Glossaire : regroupement par lettre + liste de cartes-liens vers chaque page de terme --- */
+.glossary-letter-group{ margin-top:34px; }
+.glossary-letter-group:first-of-type{ margin-top:22px; }
+.glossary-letter-heading{
+  font-family:var(--sans); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+  color:var(--gov-blue); margin:0 0 10px; padding-bottom:6px; border-bottom:1px solid var(--border);
+}
+.glossary-list{ display:flex; flex-direction:column; }
+.glossary-term-link{
+  display:block; padding:16px 4px; border-top:1px solid var(--border); text-decoration:none; color:inherit;
+}
+.glossary-letter-group .glossary-list .glossary-term-link:first-child{ border-top:none; }
+.glossary-term-link:hover h3{ color:var(--gov-blue-strong); text-decoration:underline; }
+.glossary-term-link h3{ margin:0 0 4px; font-size:17px; color:var(--ink); }
+.glossary-term-link .sigle{ color:var(--gov-blue); font-weight:700; }
+.glossary-term-link p{ margin:0; color:var(--ink-muted); font-size:14.5px; }
