@@ -21,7 +21,11 @@ RewriteRule ^(.*)$ /gate.php?r=%{REQUEST_URI} [L,QSA]
 # (nom-de-page/), pour permettre un dépôt en un seul geste sur GitHub sans passer par
 # des sous-dossiers imbriqués. Ne s'applique qu'une fois le mot de passe validé (la
 # règle ci-dessus a laissé passer la requête).
-RewriteRule ^(bilan-en-deux-jours|bilan-mdph-adulte|bilan-neuropsychologique-mdph|bilan-psychologique-mdph|certificat-medical-mdph|checklist-dossier-mdph-2026|confidentialite|dossier-mdph-adulte|equipe|handicap-cognitif-mdph|handicap-invisible-rqth|handicap-psychique-mdph|lieux-de-consultation|mentions-legales|pieces-a-joindre-dossier-mdph|prix-bilan-mdph|projet-de-vie-mdph|questionnaire-complementaire-tnd|reforme-formulaire-mdph-2026|retentissement-fonctionnel|tdah-adulte-mdph|tdah-rqth)/?$ /$1.html [L]
+# Étape 1 : une URL avec un / final est d'abord ramenée sans le / (le serveur ne sait
+# pas toujours appliquer la règle suivante quand l'URL se termine par un /).
+RewriteRule ^(bilan-en-deux-jours|bilan-mdph-adulte|bilan-neuropsychologique-mdph|bilan-psychologique-mdph|certificat-medical-mdph|checklist-dossier-mdph-2026|confidentialite|dossier-mdph-adulte|equipe|handicap-cognitif-mdph|handicap-invisible-rqth|handicap-psychique-mdph|lieux-de-consultation|mentions-legales|pieces-a-joindre-dossier-mdph|prix-bilan-mdph|projet-de-vie-mdph|questionnaire-complementaire-tnd|reforme-formulaire-mdph-2026|retentissement-fonctionnel|tdah-adulte-mdph|tdah-rqth)/$ /$1 [R=301,L]
+# Étape 2 : une fois sans le /, on sert le vrai fichier .html correspondant.
+RewriteRule ^(bilan-en-deux-jours|bilan-mdph-adulte|bilan-neuropsychologique-mdph|bilan-psychologique-mdph|certificat-medical-mdph|checklist-dossier-mdph-2026|confidentialite|dossier-mdph-adulte|equipe|handicap-cognitif-mdph|handicap-invisible-rqth|handicap-psychique-mdph|lieux-de-consultation|mentions-legales|pieces-a-joindre-dossier-mdph|prix-bilan-mdph|projet-de-vie-mdph|questionnaire-complementaire-tnd|reforme-formulaire-mdph-2026|retentissement-fonctionnel|tdah-adulte-mdph|tdah-rqth)$ /$1.html [L]
 
 # Page d'erreur 404 du site (une fois passé le mot de passe)
 ErrorDocument 404 /404.html
