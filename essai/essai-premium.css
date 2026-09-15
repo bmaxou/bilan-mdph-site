@@ -323,6 +323,23 @@ body.site-search-lock{ overflow: hidden; }
   .site-search-bar{ width:100%; }
 }
 
+/* --- Bandeau de marque : logo + accroche institutionnelle a droite, comme le site de reference --- */
+.brand-group{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+.site-tagline{
+  margin:0; max-width:360px;
+  font-family:var(--sans); font-size:14px; font-weight:400; line-height:24px; color:var(--ink);
+}
+@media (max-width:700px){ .site-tagline{ display:none; } }
+
+/* --- Accueil en icone maison seule dans le menu, comme le site de reference (au lieu du mot "Accueil") --- */
+.nav-home{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:40px; height:40px; padding:6px !important; margin-right:2px; border-radius:4px;
+  color:var(--gov-blue);
+}
+.nav-home:hover{ background:var(--gov-blue-tint); color:var(--gov-blue-strong); text-decoration:none; }
+.nav-home[aria-current="page"]{ box-shadow: inset 0 -2px 0 0 var(--gov-blue); }
+
 /* --- Recherche : barre au pixel pres du site de reference (fond gris, ligne bleue sous le champ,
    loupe blanche sur carre bleu a droite) : bouton decoratif qui ouvre l'overlay de recherche existant --- */
 .header-utility-links{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
