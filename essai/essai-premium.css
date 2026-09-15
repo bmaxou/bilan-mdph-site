@@ -394,3 +394,24 @@ body.site-search-lock{ overflow: hidden; }
 .glossary-term-link h3{ margin:0 0 4px; font-size:17px; color:var(--ink); }
 .glossary-term-link .sigle{ color:var(--gov-blue); font-weight:700; }
 .glossary-term-link p{ margin:0; color:var(--ink-muted); font-size:14.5px; }
+
+/* --- Theme clair fige sur les pages essai : le bouton de bascule a ete retire (le site de
+   reference n'a pas de mode sombre), donc on ne suit plus le systeme -- sinon deux visiteurs
+   avec des reglages differents voient une page noire pour l'un, blanche pour l'autre --- */
+:root:not(#zz-jamais){
+  color-scheme: light;
+  --paper: #FFFFFF;
+  --paper-raised: #FFFFFF;
+  --ink: #1B1E1A;
+  --ink-muted: #565A50;
+  --border: #E1DCC9;
+  --accent: #2E4356;
+  --accent-strong: #1F2F3D;
+  --accent-tint: #E7EBEE;
+  --signal: #8A4A1E;
+  --signal-tint: #F3E6D9;
+  --focus: #B85C1E;
+  --gov-blue: #000091;
+  --gov-blue-strong: #1212FF;
+  --gov-blue-tint: #E3E3FD;
+}
