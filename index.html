@@ -3,69 +3,371 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cabinet Bouche &amp; Chmura — Portail</title>
+<script>document.documentElement.classList.add('js');</script>
+<title>Bilan MDPH &amp; RQTH : objectiver un handicap invisible</title>
+<meta name="description" content="Un bilan neuropsychologique ou psychologique peut documenter le retentissement réel d'un trouble psychique, cognitif ou neurodéveloppemental. Explications par des cliniciens.">
+<link rel="canonical" href="https://bilan-mdph.fr/">
 <meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bilan MDPH &amp; RQTH">
+<meta property="og:title" content="Bilan MDPH &amp; RQTH : objectiver un handicap invisible">
+<meta property="og:description" content="Un bilan neuropsychologique ou psychologique peut documenter le retentissement réel d'un trouble psychique, cognitif ou neurodéveloppemental. Explications par des cliniciens.">
+<meta property="og:url" content="https://bilan-mdph.fr/">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=fraunces@500,600,700&f[]=general-sans@400,500,600&display=swap">
 <link rel="stylesheet" href="/assets/style.css">
-<style>
-  .portal-wrap{max-width:760px;margin:0 auto;padding:56px 24px 80px;}
-  .portal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:32px;}
-  @media (max-width:640px){.portal-grid{grid-template-columns:1fr;}}
-  .portal-card{
-    display:flex;flex-direction:column;gap:6px;
-    background:var(--paper-raised);border:1px solid var(--border);border-radius:var(--radius);
-    padding:22px 22px 20px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s;
-  }
-  .portal-card:hover{border-color:var(--ink);transform:translateY(-1px);}
-  .portal-card h3{margin:0;font-family:var(--serif);font-size:19px;font-weight:600;}
-  .portal-card span.url{font-size:13px;color:var(--ink-muted);word-break:break-all;}
-  .portal-card.is-disabled{opacity:.55;pointer-events:none;}
-  .portal-card .tag{display:inline-block;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-muted);margin-top:4px;}
-</style>
+<link rel="stylesheet" href="/essai/essai-premium.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://bilan-mdph.fr"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Max Bouche", "url": "https://bilan-mdph.fr/equipe", "worksFor": {"@type": "Organization", "name": "Cabinet Bouche & Chmura"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Sabrina Chmura", "url": "https://bilan-mdph.fr/equipe", "worksFor": {"@type": "Organization", "name": "Cabinet Bouche & Chmura"}}</script>
 </head>
 <body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
 <header class="site-header">
-  <div class="bar">
-    <a class="brand" href="/">Cabinet Bouche &amp; Chmura<small>Portail privé</small></a>
-  </div>
-</header>
-<main id="contenu">
-  <div class="portal-wrap">
-    <p class="kicker">Accès privé</p>
-    <h1 style="font-family:var(--serif);font-size:1.7rem;margin:.3em 0 0;">Choisissez un site</h1>
-    <p class="lede" style="margin-top:.6em;">Chaque site s'ouvre dans son propre sous-domaine.</p>
-
-    <div class="portal-grid">
-      <a class="portal-card" href="https://psy-psy.bilan-mdph.fr/">
-        <h3>Psy-Psy</h3>
-        <span class="url">psy-psy.bilan-mdph.fr</span>
-      </a>
-
-      <a class="portal-card" href="https://alienation-parentale.bilan-mdph.fr/">
-        <h3>Aliénation parentale</h3>
-        <span class="url">alienation-parentale.bilan-mdph.fr</span>
-      </a>
-
-      <a class="portal-card" href="https://bilan-mdph.bilan-mdph.fr/">
-        <h3>Bilan MDPH</h3>
-        <span class="url">bilan-mdph.bilan-mdph.fr</span>
-      </a>
-
-      <a class="portal-card is-disabled" href="https://mentaal.bilan-mdph.fr/">
-        <h3>Mentaal (copie)</h3>
-        <span class="url">mentaal.bilan-mdph.fr</span>
-        <span class="tag">Site pas encore construit</span>
-      </a>
+  <div class="bar bar-top">
+    <div class="brand-group">
+      <a class="brand" href="/">Bilan MDPH &amp; RQTH<small>Cabinet Bouche &amp; Chmura</small></a>
+      <p class="site-tagline">Le site d&rsquo;information pour les personnes en situation de handicap et leurs aidants</p>
+    </div>
+    <div class="bar-top-right">
+      <div class="header-utility-links">
+        <button type="button" class="a11y-btn" id="a11yOpen">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18" stroke-linecap="round"/></svg>
+          Lecture et contrastes
+        </button>
+        <a class="glossary-link" href="/essai/glossaire/">Glossaire</a>
+      </div>
+      <button type="button" class="site-search-bar" data-site-search-open aria-label="Rechercher sur le site">
+        <span class="site-search-bar-text">Rechercher sur le site</span>
+        <span class="site-search-bar-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M13.3 13.3 18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </span>
+      </button>
     </div>
   </div>
+  <div class="bar bar-nav">
+    <button class="nav-toggle" aria-expanded="false" aria-label="Ouvrir le menu">Menu &#9776;</button>
+    <nav class="primary-nav" aria-label="Navigation principale">
+      <a class="nav-home" href="/" title="Accueil" aria-label="Accueil" aria-current="page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V19a1 1 0 0 0 1 1H10v-5.5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1V20h3.5a1 1 0 0 0 1-1V9.5"/></svg></a>
+      <a href="/bilan-mdph-adulte">Bilan MDPH adulte</a>
+      <a href="/retentissement-fonctionnel">Retentissement fonctionnel</a>
+      <a href="/bilan-a-distance/">Bilan à distance</a>
+      <a href="/equipe">Équipe</a>
+    </nav>
+    <a class="header-cta" href="https://www.doctolib.fr/A-COMPLETER-URL-DOCTOLIB">Prendre rendez-vous</a>
+  </div>
+</header>
+
+<div class="a11y-overlay" id="a11yOverlay" role="dialog" aria-modal="true" aria-label="Paramètres d'accessibilité" hidden>
+  <div class="a11y-panel">
+    <div class="a11y-panel-head">
+      <h2>Paramètres d'accessibilité</h2>
+      <button type="button" class="a11y-close" id="a11yClose">Fermer ✕</button>
+    </div>
+    <div class="a11y-row" data-a11y-group="contrast">
+      <span class="a11y-row-label">Contrastes</span>
+      <span class="a11y-options">
+        <label><input type="radio" name="a11y-contrast" value="defaut"> Par défaut</label>
+        <label><input type="radio" name="a11y-contrast" value="renforce"> Renforcer</label>
+        <label><input type="radio" name="a11y-contrast" value="inverse"> Inverser</label>
+      </span>
+    </div>
+    <div class="a11y-row" data-a11y-group="dyslexia">
+      <span class="a11y-row-label">Police (dyslexie)</span>
+      <span class="a11y-options">
+        <label><input type="radio" name="a11y-dyslexia" value="defaut"> Par défaut</label>
+        <label><input type="radio" name="a11y-dyslexia" value="adapter"> Adapter</label>
+      </span>
+    </div>
+    <div class="a11y-row" data-a11y-group="leading">
+      <span class="a11y-row-label">Interlignage</span>
+      <span class="a11y-options">
+        <label><input type="radio" name="a11y-leading" value="defaut"> Par défaut</label>
+        <label><input type="radio" name="a11y-leading" value="augmenter"> Augmenter</label>
+      </span>
+    </div>
+    <div class="a11y-row" data-a11y-group="justify">
+      <span class="a11y-row-label">Justification</span>
+      <span class="a11y-options">
+        <label><input type="radio" name="a11y-justify" value="defaut"> Par défaut</label>
+        <label><input type="radio" name="a11y-justify" value="supprimer"> Supprimer</label>
+      </span>
+    </div>
+    <div class="a11y-row" data-a11y-group="targets">
+      <span class="a11y-row-label">Augmenter la taille des zones interactives</span>
+      <span class="a11y-options">
+        <label><input type="radio" name="a11y-targets" value="defaut"> Par défaut</label>
+        <label><input type="radio" name="a11y-targets" value="augmenter"> Augmenter</label>
+      </span>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-inner reveal">
+    <span class="hero-kicker">Cabinet Bouche &amp; Chmura — Paris, Île-de-France, Ardèche, téléconsultation</span>
+    <h1>Bilan MDPH &amp; RQTH : objectiver un handicap invisible</h1>
+    <p class="lede">Un TDAH, un trouble du spectre de l'autisme, des troubles cognitifs ou une souffrance psychique durable peuvent justifier un dossier MDPH ou une RQTH — mais seul un retentissement fonctionnel réellement décrit et objectivé rend ce dossier exploitable.</p>
+    <div class="hero-actions">
+      <a class="btn" href="https://www.doctolib.fr/A-COMPLETER-URL-DOCTOLIB">Prendre rendez-vous pour évaluer votre situation</a>
+      <a class="btn-outline" href="/checklist-dossier-mdph-2026">Télécharger la checklist du dossier</a>
+    </div>
+    <div class="hero-figure">
+      <div class="hero-stat"><b>25</b><span>pages d'explications cliniques, écrites par le cabinet</span></div>
+      <div class="hero-stat"><b>2</b><span>expertises complémentaires : neuropsychologique et psychologique</span></div>
+      <div class="hero-stat"><b>3</b><span>zones de consultation : Paris, Île-de-France, Ardèche, et téléconsultation partout</span></div>
+    </div>
+  </div>
+</section>
+
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <ol><li aria-current="page">Accueil</li></ol>
+</nav>
+<main id="contenu">
+  <article>
+
+<div class="page-tools reveal">
+  <button type="button" class="listen-btn" id="listenBtn">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    <span class="listen-label">Écouter</span>
+  </button>
+  <div class="share-tools">
+    <span class="share-label">Partager la page :</span>
+    <a class="share-btn" id="shareFb" href="#" target="_blank" rel="noopener" aria-label="Partager sur Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V11H8v3h2.5v6h3v-6H16l.5-3h-3V9.7c0-.4.3-.7.5-.7Z"/></svg></a>
+    <a class="share-btn" id="shareX" href="#" target="_blank" rel="noopener" aria-label="Partager sur X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4l7.5 9.5L4.5 20H7l5.2-5.6L16.5 20H20l-7.9-10L19 4h-2.5l-4.8 5.1L8 4H4Z"/></svg></a>
+    <a class="share-btn" id="shareLi" href="#" target="_blank" rel="noopener" aria-label="Partager sur LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8.5h-3V19h3V8.5ZM5 7a1.8 1.8 0 1 0 0-3.6A1.8 1.8 0 0 0 5 7ZM10 8.5H13v1.4c.5-.9 1.6-1.6 3-1.6 2.4 0 3.5 1.5 3.5 4.2V19h-3v-5.9c0-1.2-.4-2-1.5-2-1 0-1.6.7-1.9 1.4-.1.2-.1.6-.1.9V19h-3V8.5Z"/></svg></a>
+    <a class="share-btn" id="shareMail" href="#" aria-label="Partager par e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 6 8 7 8-7"/></svg></a>
+    <button type="button" class="share-btn" id="shareCopy" aria-label="Copier le lien"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+  </div>
+</div>
+
+<p class="reveal"><strong>Ce site n'est pas celui d'une MDPH</strong> — il ne dépose ni n'instruit aucun dossier. Il explique, avec la rigueur clinique du Cabinet Bouche &amp; Chmura, ce qu'un bilan neuropsychologique ou psychologique peut apporter à une démarche de reconnaissance du handicap (AAH, RQTH, PCH, AEEH, CMI, orientation), et ce qu'il ne peut pas garantir : aucune évaluation, aussi rigoureuse soit-elle, ne préjuge de la décision d'une CDAPH.</p>
+
+<div class="box box-retenir reveal">
+  <span class="box-label">À retenir</span>
+  <p>Un handicap psychique, cognitif ou neurodéveloppemental n'est pas toujours visible. Ce qui rend un dossier exploitable, ce n'est pas un diagnostic seul : c'est la description précise de son retentissement sur l'autonomie, les apprentissages, la vie sociale, la vie affective et le travail. C'est cette description qu'un bilan approfondi permet de construire.</p>
+</div>
+
+<h2 id="deux-bilans" class="reveal">Deux bilans, deux expertises complémentaires</h2>
+<p class="reveal">Le cabinet réalise deux types d'évaluations, chacune portée par une clinicienne ou un clinicien dont c'est le cœur de pratique :</p>
+
+<div class="grid grid-2 reveal">
+  <div class="card">
+    <h3>Bilan neuropsychologique</h3>
+    <p>Fonctions attentionnelles, mnésiques, exécutives et instrumentales. Indiqué pour documenter un trouble cognitif, un TDAH ou un TSA à l'âge adulte.</p>
+    <a class="card-link" href="/bilan-neuropsychologique-mdph">Ce qu'il apporte pour un dossier MDPH →</a>
+  </div>
+  <div class="card">
+    <h3>Bilan psychologique</h3>
+    <p>Fonctionnement psychique, retentissement d'une souffrance durable, articulation avec le certificat médical. Indiqué pour un handicap psychique.</p>
+    <a class="card-link" href="/bilan-psychologique-mdph">Ce qu'il apporte pour un dossier MDPH →</a>
+  </div>
+</div>
+
+<p class="reveal">Vous ne savez pas lequel concerne votre situation ? La page <a href="/bilan-mdph-adulte">bilan MDPH adulte</a> oriente selon le motif de la démarche.</p>
+
+<h2 id="retentissement" class="reveal">Le retentissement fonctionnel, cœur du dossier</h2>
+<p class="reveal">C'est la question que la plupart des personnes concernées se posent en dernier, alors qu'elle devrait venir en premier : comment décrire, avec des mots concrets et observables, ce que ce trouble change réellement au quotidien ? Nous avons construit un guide dédié, domaine de vie par domaine de vie.</p>
+<div class="cta-secondary reveal">
+  <a href="/retentissement-fonctionnel">Lire le guide « Du trouble au retentissement fonctionnel » →</a>
+</div>
+
+<h2 id="modele" class="reveal">Un modèle national et hybride, pas local</h2>
+<p class="reveal">Le cabinet consulte principalement à Paris, également en Île-de-France et en Ardèche, et pratique la téléconsultation aux mêmes tarifs partout. La promesse n'est donc pas « un psychologue près de chez vous », mais une expertise rare, accessible d'où que vous soyez — avec un déplacement uniquement si la méthode l'exige. Les pages <a href="/bilan-a-distance/">bilan à distance</a> et <a href="/bilan-en-deux-jours">bilan en un ou deux jours</a> détaillent ce fonctionnement et ses limites.</p>
+
+<div class="assistant-block reveal">
+  <div data-site-assistant></div>
+</div>
+
+<h2 id="explorer" class="reveal">Explorer les 25 pages du site</h2>
+<p class="reveal">Toutes les pages, classées par thème. La recherche en haut de page fouille aussi l'intégralité du contenu.</p>
+<div class="theme-nav reveal" role="group" aria-label="Filtrer par thème">
+  <button type="button" class="active" data-theme-filter="all">Tout</button>
+  <button type="button" data-theme-filter="bilans">Bilans</button>
+  <button type="button" data-theme-filter="ressources">Ressources</button>
+  <button type="button" data-theme-filter="situations">Situations</button>
+</div>
+<div class="page-grid" id="page-grid">
+<a class="page-card reveal" data-theme="bilans" href="/bilan-mdph-adulte"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="m9 13 2 2 4-4"/></svg></span><h3>Bilan MDPH adulte</h3><p>Quel bilan réaliser à l'âge adulte pour documenter un dossier MDPH ou une demande de RQTH, ce qu'il peut objectiver…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="bilans" href="/bilan-neuropsychologique-mdph"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="m9 13 2 2 4-4"/></svg></span><h3>Bilan neuropsychologique pour la MDPH</h3><p>Déroulé, durée, fonctions évaluées et contenu du compte rendu : comment un bilan neuropsychologique peut documenter…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="bilans" href="/bilan-a-distance/"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="m9 13 2 2 4-4"/></svg></span><h3>Bilan neuropsychologique à distance</h3><p>Ce qu'un bilan en visioconférence permet réellement d'évaluer, ce qui exige une passation en présence, et comment…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="bilans" href="/bilan-psychologique-mdph"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="m9 13 2 2 4-4"/></svg></span><h3>Bilan psychologique pour la MDPH</h3><p>En quoi un bilan psychologique diffère d'un bilan neuropsychologique, ce qu'il documente d'une situation de handicap…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="bilans" href="/bilan-en-deux-jours"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="m9 13 2 2 4-4"/></svg></span><h3>Délais d'un bilan neuropsychologique et formule groupée</h3><p>Pourquoi les délais publics sont longs, et comment un bilan peut être conduit en une ou deux journées sur place,…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="bilans" href="/prix-bilan-mdph"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="m9 13 2 2 4-4"/></svg></span><h3>Prix d'un bilan pour un dossier MDPH et remboursement</h3><p>Ce qui fait varier le prix d'un bilan neuropsychologique ou psychologique en libéral, l'absence de remboursement par…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="ressources" href="/certificat-medical-mdph"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M15 3v4h4"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></span><h3>Certificat médical MDPH (Cerfa 15695)</h3><p>Qui remplit le certificat médical d'un dossier MDPH, sa durée de validité, et comment un bilan peut en étayer la…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="ressources" href="/checklist-dossier-mdph-2026"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M15 3v4h4"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></span><h3>Checklist dossier MDPH 2026</h3><p>Checklist gratuite et à jour des pièces obligatoires et facultatives d'un dossier MDPH pour troubles psychiques,…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="ressources" href="/dossier-mdph-adulte"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M15 3v4h4"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></span><h3>Dossier MDPH adulte</h3><p>Les étapes d'une première demande MDPH à l'âge adulte, les pièces attendues et la place des bilans dans l'évaluation…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="ressources" href="/reforme-formulaire-mdph-2026"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M15 3v4h4"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></span><h3>Nouveau formulaire MDPH 2026</h3><p>Expérimentation de la version 2 du formulaire de demande MDPH, départements pilotes, calendrier de généralisation :…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="ressources" href="/pieces-a-joindre-dossier-mdph"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M15 3v4h4"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></span><h3>Pièces à joindre à un dossier MDPH</h3><p>Pièces obligatoires, pièces facultatives mais utiles, et la place des comptes rendus de bilan dans un dossier MDPH…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="ressources" href="/projet-de-vie-mdph"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M15 3v4h4"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></span><h3>Projet de vie MDPH</h3><p>À quoi sert le projet de vie dans un dossier MDPH, comment y décrire ses besoins et son quotidien de façon concrète,…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="ressources" href="/questionnaire-complementaire-tnd"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M15 3v4h4"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></span><h3>Questionnaire complémentaire MDPH TND</h3><p>Le questionnaire complémentaire pour les altérations des fonctions mentales, cognitives et psychiques est facultatif.…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="ressources" href="/retentissement-fonctionnel"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M15 3v4h4"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></span><h3>Retentissement fonctionnel</h3><p>Comment traduire un trouble en difficultés concrètes et observables, domaine de vie par domaine de vie. Guide…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="situations" href="/handicap-cognitif-mdph"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 21c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5"/></svg></span><h3>Handicap cognitif et MDPH</h3><p>Comment une altération des fonctions cognitives est évaluée dans un dossier MDPH et ce qu'un bilan neuropsychologique…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="situations" href="/handicap-invisible-rqth"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 21c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5"/></svg></span><h3>Handicap invisible et RQTH</h3><p>Ce que la RQTH change au travail quand le handicap ne se voit pas, et comment documenter un retentissement…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="situations" href="/handicap-psychique-mdph"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 21c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5"/></svg></span><h3>Handicap psychique et MDPH</h3><p>Comment un trouble psychique peut constituer une situation de handicap au sens de la MDPH et comment son…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="situations" href="/tdah-adulte-mdph"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 21c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5"/></svg></span><h3>TDAH adulte et MDPH</h3><p>Comment un bilan neuropsychologique documente le retentissement d'un TDAH diagnostiqué à l'âge adulte pour un dossier…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="situations" href="/tdah-rqth"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 21c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5"/></svg></span><h3>TDAH et RQTH</h3><p>Comment un TDAH peut justifier une reconnaissance de travailleur handicapé et comment en documenter le retentissement…</p><span class="page-card-go">Lire →</span></a>
+<a class="page-card reveal" data-theme="situations" href="/autisme-adulte-mdph/"><span class="page-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 21c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5"/></svg></span><h3>TSA à l'âge adulte et MDPH</h3><p>Comment un trouble du spectre de l'autisme diagnostiqué à l'âge adulte peut être documenté pour une démarche MDPH, et…</p><span class="page-card-go">Lire →</span></a></div>
+
+<div class="box box-attention reveal">
+  <span class="box-label">Ce que nous ne faisons pas</span>
+  <p>Nous ne garantissons aucune obtention d'AAH, de RQTH, de PCH, d'AEEH ou de CMI, et n'affirmons jamais qu'un dossier « passe » grâce à un bilan. La décision appartient exclusivement à la CDAPH de votre MDPH ; le certificat médical relève du médecin traitant ou spécialiste, pas de nos évaluations. Notre rôle est de documenter un fonctionnement, pas d'instruire un droit.</p>
+</div>
+
+<div class="cta-block reveal">
+  <h2>Évaluer votre situation</h2>
+  <p>Un premier échange permet de déterminer quel bilan correspond à votre démarche et ce qu'il pourra concrètement documenter.</p>
+  <a class="btn" href="https://www.doctolib.fr/A-COMPLETER-URL-DOCTOLIB">Prendre rendez-vous pour évaluer votre situation</a>
+  <a class="btn-ghost" href="/checklist-dossier-mdph-2026">Télécharger la checklist du dossier</a>
+</div>
+
+  </article>
 </main>
 <footer class="site-footer">
   <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <h4>Bilan MDPH &amp; RQTH</h4>
+        <p style="font-size:14px;color:var(--ink-muted);max-width:36ch;">
+          Bilans neuropsychologiques et psychologiques pouvant appuyer une démarche MDPH ou RQTH.
+          Cabinet Bouche &amp; Chmura, Colombes — consultations en Île-de-France, en Ardèche et en téléconsultation.
+        </p>
+      </div>
+      <div><h4>Bilans</h4><ul><li><a href="/bilan-mdph-adulte">Bilan MDPH adulte</a></li><li><a href="/bilan-neuropsychologique-mdph">Bilan neuropsychologique</a></li><li><a href="/bilan-psychologique-mdph">Bilan psychologique</a></li><li><a href="/bilan-a-distance/">Bilan à distance</a></li><li><a href="/bilan-en-deux-jours">Bilan en un ou deux jours</a></li><li><a href="/prix-bilan-mdph">Prix et remboursement</a></li></ul></div><div><h4>Ressources</h4><ul><li><a href="/retentissement-fonctionnel">Du trouble au retentissement</a></li><li><a href="/checklist-dossier-mdph-2026">Checklist dossier MDPH</a></li><li><a href="/questionnaire-complementaire-tnd">Questionnaire complémentaire TND</a></li><li><a href="/reforme-formulaire-mdph-2026">Réforme du formulaire 2026</a></li><li><a href="/dossier-mdph-adulte">Constituer un dossier</a></li><li><a href="/certificat-medical-mdph">Certificat médical</a></li><li><a href="/projet-de-vie-mdph">Projet de vie</a></li><li><a href="/pieces-a-joindre-dossier-mdph">Pièces à joindre</a></li></ul></div><div><h4>Situations</h4><ul><li><a href="/handicap-cognitif-mdph">Handicap cognitif</a></li><li><a href="/handicap-psychique-mdph">Handicap psychique</a></li><li><a href="/handicap-invisible-rqth">Handicap invisible et RQTH</a></li><li><a href="/tdah-adulte-mdph">TDAH adulte et MDPH</a></li><li><a href="/tdah-rqth">TDAH et RQTH</a></li><li><a href="/autisme-adulte-mdph/">Autisme adulte et MDPH</a></li></ul></div>
+    </div>
     <div class="footer-legal">
       <span>© 2026 Cabinet Bouche &amp; Chmura</span>
+      <span>
+        <a href="/equipe">Équipe</a> ·
+        <a href="/lieux-de-consultation">Lieux de consultation</a> ·
+        <a href="/mentions-legales">Mentions légales</a> ·
+        <a href="/confidentialite">Confidentialité</a>
+      </span>
     </div>
   </div>
 </footer>
+<script src="/assets/main.js"></script>
+<script src="/essai/reveal.js"></script>
+<script src="/essai/site-search.js"></script>
+<script>
+(function(){
+  var buttons = document.querySelectorAll('[data-theme-filter]');
+  var cards = document.querySelectorAll('#page-grid .page-card');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      buttons.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var theme = btn.getAttribute('data-theme-filter');
+      cards.forEach(function(c){
+        c.style.display = (theme === 'all' || c.getAttribute('data-theme') === theme) ? '' : 'none';
+      });
+    });
+  });
+})();
+(function(){
+  var btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    var root = document.documentElement;
+    var current = root.getAttribute('data-theme');
+    if (current === 'dark'){ root.setAttribute('data-theme', 'light'); }
+    else if (current === 'light'){ root.removeAttribute('data-theme'); }
+    else { root.setAttribute('data-theme', 'dark'); }
+  });
+})();
+(function(){
+  var STORAGE_KEY = 'bmdph-a11y';
+  function readPrefs(){
+    try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }catch(e){ return {}; }
+  }
+  function writePrefs(p){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(p)); }catch(e){} }
+  function apply(prefs){
+    var html = document.documentElement;
+    html.classList.toggle('a11y-contrast-fort', prefs.contrast === 'renforce');
+    html.classList.toggle('a11y-contrast-inverse', prefs.contrast === 'inverse');
+    html.classList.toggle('a11y-dyslexia', prefs.dyslexia === 'adapter');
+    html.classList.toggle('a11y-leading', prefs.leading === 'augmenter');
+    html.classList.toggle('a11y-no-justify', prefs.justify === 'supprimer');
+    html.classList.toggle('a11y-big-targets', prefs.targets === 'augmenter');
+  }
+  var prefs = readPrefs();
+  apply(prefs);
+
+  var overlay = document.getElementById('a11yOverlay');
+  var openBtn = document.getElementById('a11yOpen');
+  var closeBtn = document.getElementById('a11yClose');
+  if (openBtn && overlay) openBtn.addEventListener('click', function(){ overlay.hidden = false; });
+  if (closeBtn && overlay) closeBtn.addEventListener('click', function(){ overlay.hidden = true; });
+  if (overlay) overlay.addEventListener('click', function(e){ if (e.target === overlay) overlay.hidden = true; });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && overlay && !overlay.hidden) overlay.hidden = true;
+  });
+
+  document.querySelectorAll('[data-a11y-group]').forEach(function(group){
+    var key = group.getAttribute('data-a11y-group');
+    var val = prefs[key] || 'defaut';
+    var radio = group.querySelector('input[value="' + val + '"]');
+    if (radio) radio.checked = true;
+    group.querySelectorAll('input[type=radio]').forEach(function(input){
+      input.addEventListener('change', function(){
+        prefs[key] = input.value;
+        writePrefs(prefs);
+        apply(prefs);
+      });
+    });
+  });
+})();
+(function(){
+  var btn = document.getElementById('listenBtn');
+  if (!btn) return;
+  if (!('speechSynthesis' in window)){ btn.style.display = 'none'; return; }
+  var speaking = false;
+  var label = btn.querySelector('.listen-label');
+  function stop(){
+    window.speechSynthesis.cancel();
+    speaking = false;
+    btn.classList.remove('is-playing');
+    label.textContent = 'Écouter';
+  }
+  btn.addEventListener('click', function(){
+    if (speaking){ stop(); return; }
+    var article = document.querySelector('main article');
+    var text = article ? article.innerText : document.body.innerText;
+    var utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'fr-FR';
+    utter.onend = stop;
+    utter.onerror = stop;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utter);
+    speaking = true;
+    btn.classList.add('is-playing');
+    label.textContent = 'Mettre en pause';
+  });
+  window.addEventListener('beforeunload', function(){ window.speechSynthesis.cancel(); });
+})();
+(function(){
+  var url = encodeURIComponent(location.href);
+  var title = encodeURIComponent(document.title);
+  var fb = document.getElementById('shareFb');
+  var x = document.getElementById('shareX');
+  var li = document.getElementById('shareLi');
+  var mail = document.getElementById('shareMail');
+  var copy = document.getElementById('shareCopy');
+  if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+  if (x) x.href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+  if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+  if (mail) mail.href = 'mailto:?subject=' + title + '&body=' + url;
+  if (copy) copy.addEventListener('click', function(){
+    var restore = copy.getAttribute('aria-label');
+    if (navigator.clipboard){
+      navigator.clipboard.writeText(location.href).then(function(){
+        copy.setAttribute('aria-label', 'Lien copié !');
+        setTimeout(function(){ copy.setAttribute('aria-label', restore); }, 2000);
+      });
+    }
+  });
+})();
+</script>
 </body>
 </html>
