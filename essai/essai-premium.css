@@ -378,6 +378,7 @@ body.site-search-lock{ overflow: hidden; }
   background:var(--paper); color:var(--gov-blue); font:inherit; font-size:12px; font-weight:400;
   cursor:pointer; white-space:nowrap;
 }
+.listen-cell[hidden]{ display:none; }
 .listen-cell:last-child{ border-right:none; }
 .listen-cell:hover{ background:var(--gov-blue-tint); }
 .listen-cell-menu{ width:30px; padding:0; background:var(--gov-blue); color:#fff; }
