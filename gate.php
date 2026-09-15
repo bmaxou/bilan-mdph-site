@@ -1,8 +1,3 @@
-Zapier semble avoir un souci temporaire de leur côté, ça peut prendre un moment à se débloquer — pas la peine d'insister maintenant, réessaie plus tard.
-
-En attendant, pour débloquer tout de suite les 4 boutons sans attendre Zapier : ouvre ce lien → github.com/bmaxou/bilan-mdph-site/edit/main/gate.php, clique sur l'icône crayon si besoin, fais Ctrl+A dans la zone de texte, colle ce qui suit à la place, puis clique « Commit changes » (bouton vert en bas) :
-
-```php
 <?php
 /**
 * Cabinet Bouche & Chmura — bilan-mdph.fr
@@ -79,4 +74,3 @@ body{display:flex;align-items:center;justify-content:center;min-height:100vh;pad
 </div>
 </body>
 </html>
-```
