@@ -223,6 +223,217 @@
     });
   });
 })();
+(function(){
+  var tool = document.getElementById('listenTool');
+  if (!tool) return;
+  var bar = document.getElementById('listenBar');
+  var playBtn = document.getElementById('listenPlayBtn');
+  var playIcon = document.getElementById('listenPlayIcon');
+  var label = document.getElementById('listenLabel');
+  var stopBtn = document.getElementById('listenStopBtn');
+  var rewindBtn = document.getElementById('listenRewindBtn');
+  var forwardBtn = document.getElementById('listenForwardBtn');
+  var volumeBtn = document.getElementById('listenVolumeBtn');
+  var volumeIcon = document.getElementById('listenVolumeIcon');
+  var infoBtn = document.getElementById('listenInfoBtn');
+  var closeBtn = document.getElementById('listenCloseBtn');
+  var menuBtn = document.getElementById('listenMenuBtn');
+  var menu = document.getElementById('listenMenu');
+  var popover = document.getElementById('listenPopover');
+  var settingsBtn = document.getElementById('listenSettingsBtn');
+  var settingsPanel = document.getElementById('listenSettingsPanel');
+  var keyboardToggle = document.getElementById('listenKeyboardToggle');
+  var clickToggle = document.getElementById('listenClickToggle');
+  var contrastToggle = document.getElementById('listenContrastToggle');
+  var textModeBtn = document.getElementById('listenTextModeBtn');
+  var maskBtn = document.getElementById('listenMaskBtn');
+  var helpBtn = document.getElementById('listenHelpBtn');
+
+  if (!('speechSynthesis' in window)){ tool.style.display = 'none'; return; }
+
+  var ICON_LISTEN = '<path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>';
+  var ICON_PAUSE = '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+  var ICON_PLAY = '<path d="M7 5v14l12-7Z"/>';
+  var ICON_VOL = '<path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>';
+  var ICON_MUTE = '<path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M17 9l5 6M22 9l-5 6"/>';
+
+  var blocks = Array.prototype.slice.call(
+    (document.querySelector('main article') || document.body).querySelectorAll('h1,h2,h3,p,li,blockquote')
+  ).filter(function(el){ return el.textContent.trim().length > 3; });
+
+  var idx = 0, muted = false, rate = 1, expanded = false, playing = false, paused = false;
+  var clickListenOn = false, keyboardOn = false, contrastOn = false, textModeOn = false, maskOn = false;
+  var maskEl = null;
+
+  function setExpanded(v){
+    expanded = v;
+    [stopBtn, rewindBtn, forwardBtn, volumeBtn, infoBtn, closeBtn].forEach(function(b){ b.hidden = !v; });
+  }
+  function clearHighlight(){ blocks.forEach(function(b){ b.classList.remove('listen-active-block'); }); }
+  function highlight(i){
+    clearHighlight();
+    if (blocks[i]){ blocks[i].classList.add('listen-active-block'); blocks[i].scrollIntoView({block:'center', behavior:'smooth'}); }
+  }
+  function setPlayIcon(kind){
+    playIcon.innerHTML = kind === 'pause' ? ICON_PAUSE : (kind === 'play' ? ICON_PLAY : ICON_LISTEN);
+  }
+  function speakFrom(i){
+    if (i < 0) i = 0;
+    if (i >= blocks.length){ stopAll(); return; }
+    idx = i;
+    window.speechSynthesis.cancel();
+    highlight(idx);
+    playing = true; paused = false;
+    playBtn.classList.add('is-playing');
+    stopBtn.hidden = false;
+    setPlayIcon('pause');
+    label.textContent = 'Pause';
+    try{
+      var utter = new SpeechSynthesisUtterance(blocks[idx].textContent);
+      utter.lang = 'fr-FR';
+      utter.rate = rate;
+      utter.volume = muted ? 0 : 1;
+      utter.onend = function(){ if (playing && !paused) speakFrom(idx + 1); };
+      utter.onerror = function(){};
+      window.speechSynthesis.speak(utter);
+    }catch(e){}
+  }
+  function togglePlayPause(){
+    if (!playing){ setExpanded(true); speakFrom(idx); return; }
+    if (paused){
+      window.speechSynthesis.resume();
+      paused = false;
+      setPlayIcon('pause');
+      label.textContent = 'Pause';
+    } else {
+      window.speechSynthesis.pause();
+      paused = true;
+      setPlayIcon('play');
+      label.textContent = 'Écouter';
+    }
+  }
+  function stopAll(){
+    window.speechSynthesis.cancel();
+    playing = false; paused = false;
+    playBtn.classList.remove('is-playing');
+    setPlayIcon('listen');
+    label.textContent = 'Écouter';
+    clearHighlight();
+  }
+  function closeAll(){
+    stopAll();
+    setExpanded(false);
+    closePopover();
+  }
+  function closePopover(){ popover.hidden = true; }
+  function openPopover(html, anchor){
+    popover.innerHTML = html;
+    popover.hidden = false;
+    var r = anchor.getBoundingClientRect(), barR = bar.getBoundingClientRect();
+    popover.style.left = (r.left - barR.left) + 'px';
+  }
+
+  playBtn.addEventListener('click', togglePlayPause);
+  stopBtn.addEventListener('click', stopAll);
+  rewindBtn.addEventListener('click', function(){ if (playing) speakFrom(idx - 1); });
+  forwardBtn.addEventListener('click', function(){ if (playing) speakFrom(idx + 1); });
+  volumeBtn.addEventListener('click', function(){
+    muted = !muted;
+    volumeIcon.innerHTML = muted ? ICON_MUTE : ICON_VOL;
+    volumeBtn.setAttribute('aria-label', muted ? 'Rétablir le son' : 'Couper le son');
+    if (playing && !paused) speakFrom(idx);
+  });
+  closeBtn.addEventListener('click', closeAll);
+  infoBtn.addEventListener('click', function(){
+    if (!popover.hidden){ closePopover(); return; }
+    openPopover('<p>Lecture audio du contenu de cette page, à partir de la voix française installée sur votre appareil.</p>', infoBtn);
+  });
+  helpBtn.addEventListener('click', function(){
+    menu.hidden = true;
+    openPopover('<p><strong>Raccourcis (mode clavier)&nbsp;:</strong><br>Espace&nbsp;: lecture / pause<br>← →&nbsp;: reculer / avancer<br>Échap&nbsp;: fermer</p>', menuBtn);
+  });
+
+  menuBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var willOpen = menu.hidden;
+    menu.hidden = !willOpen;
+    menuBtn.setAttribute('aria-expanded', String(willOpen));
+    closePopover();
+  });
+  document.addEventListener('click', function(e){
+    if (!tool.contains(e.target)){ menu.hidden = true; closePopover(); }
+  });
+
+  function setToggle(btn, on){ btn.classList.toggle('is-on', on); btn.setAttribute('aria-checked', String(on)); }
+
+  settingsBtn.addEventListener('click', function(e){ e.stopPropagation(); settingsPanel.hidden = !settingsPanel.hidden; });
+  settingsPanel.querySelectorAll('.listen-speed-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      settingsPanel.querySelectorAll('.listen-speed-btn').forEach(function(x){ x.classList.remove('is-active'); });
+      b.classList.add('is-active');
+      rate = parseFloat(b.getAttribute('data-rate'));
+      if (playing && !paused) speakFrom(idx);
+    });
+  });
+
+  keyboardToggle.addEventListener('click', function(){ keyboardOn = !keyboardOn; setToggle(keyboardToggle, keyboardOn); });
+  document.addEventListener('keydown', function(e){
+    if (!keyboardOn) return;
+    var tag = (e.target && e.target.tagName) || '';
+    if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+    if (e.key === ' '){ e.preventDefault(); togglePlayPause(); }
+    else if (e.key === 'ArrowLeft'){ if (playing) speakFrom(idx - 1); }
+    else if (e.key === 'ArrowRight'){ if (playing) speakFrom(idx + 1); }
+    else if (e.key === 'Escape'){ closeAll(); }
+  });
+
+  clickToggle.addEventListener('click', function(){
+    clickListenOn = !clickListenOn;
+    setToggle(clickToggle, clickListenOn);
+    blocks.forEach(function(b){ b.classList.toggle('listen-clickable', clickListenOn); });
+  });
+  blocks.forEach(function(b, i){
+    b.addEventListener('click', function(){
+      if (!clickListenOn) return;
+      setExpanded(true);
+      speakFrom(i);
+    });
+  });
+
+  contrastToggle.addEventListener('click', function(){
+    contrastOn = !contrastOn;
+    setToggle(contrastToggle, contrastOn);
+    (document.querySelector('main article') || document.body).classList.toggle('listen-text-boost', contrastOn);
+  });
+
+  textModeBtn.addEventListener('click', function(){
+    textModeOn = !textModeOn;
+    setToggle(textModeBtn, textModeOn);
+    document.body.classList.toggle('listen-text-mode', textModeOn);
+    menu.hidden = true;
+  });
+
+  function updateMask(e){
+    if (maskEl) maskEl.style.setProperty('--listen-mask-y', e.clientY + 'px');
+  }
+  maskBtn.addEventListener('click', function(){
+    maskOn = !maskOn;
+    setToggle(maskBtn, maskOn);
+    if (maskOn){
+      maskEl = document.createElement('div');
+      maskEl.className = 'listen-mask';
+      document.body.appendChild(maskEl);
+      document.addEventListener('mousemove', updateMask);
+    } else if (maskEl){
+      document.removeEventListener('mousemove', updateMask);
+      maskEl.remove();
+      maskEl = null;
+    }
+    menu.hidden = true;
+  });
+
+  window.addEventListener('beforeunload', function(){ window.speechSynthesis.cancel(); });
+})();
 </script>
 </body>
 </html>
