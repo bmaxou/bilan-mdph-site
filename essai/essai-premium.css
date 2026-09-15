@@ -366,8 +366,11 @@ body.site-search-lock{ overflow: hidden; }
 
 /* --- Écouter / Partager, restyles au pixel pres du site de reference : bouton "Écouter" en deux
    cases separees par un trait (menu + lecture), place AVANT le titre ; "Partager la page" placé
-   APRÈS le titre, empilé, avec des icônes carrées sans bordure --- */
-.listen-tool{ margin:0 0 10px; position:relative; }
+   APRÈS le titre, empilé, avec des icônes carrées sans bordure ---
+   Distances calées au pixel pres sur monparcourshandicap.gouv.fr/glossaire/mdph :
+   fil d'Ariane -> barre Écouter = 40px, barre Écouter -> titre = 24px,
+   titre -> "Partager la page" = 40px, label -> icônes = 16px, icônes espacées de 16px. */
+.listen-tool{ margin:28px 0 24px; position:relative; }
 .listen-bar{
   display:inline-flex; align-items:stretch; height:30px; margin:0;
   border-radius:2px; overflow:hidden; box-shadow:0 0 0 1px var(--gov-blue);
@@ -441,12 +444,12 @@ body.site-search-lock{ overflow: hidden; }
     linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)) bottom / 100% calc(100vh - var(--listen-mask-y) - 60px) no-repeat;
 }
 .share-tools{
-  display:block; margin:0 0 26px; padding-bottom:18px; border-bottom:1px solid var(--border);
+  display:block; margin:26px 0 32px;
 }
-.share-label{ margin:0 0 10px; font-size:16px; font-weight:400; color:var(--ink); }
-.share-row{ display:flex; align-items:center; gap:0; flex-wrap:wrap; }
+.share-label{ margin:0 0 16px; font-size:16px; font-weight:400; color:var(--ink); }
+.share-row{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
 .share-btn{
-  width:40px; height:44px; border-radius:0; border:none; background:none;
+  width:40px; height:44px; border-radius:0; border:none; background:none; box-shadow:0 0 0 1px #DDDDDD inset;
   display:flex; align-items:center; justify-content:center; color:var(--gov-blue); cursor:pointer; text-decoration:none; padding:0;
 }
 .share-btn:hover{ background:var(--gov-blue-tint); }
