@@ -127,7 +127,7 @@
 /* --- Panneau « Paramètres d'accessibilité » --- */
 .a11y-overlay{ position:fixed; inset:0; z-index:2100; background:rgba(20,20,18,.5); align-items:flex-start; justify-content:center; padding:8vh 18px 18px; }
 .a11y-overlay:not([hidden]){ display:flex; }
-.a11y-panel{ width:100%; max-width:640px; max-height:80vh; overflow-y:auto; background:var(--paper-raised); border-radius:16px; border:1px solid var(--border); box-shadow:0 30px 60px -20px rgba(0,0,0,.35); padding:28px 26px 30px; }
+.a11y-panel{ width:100%; max-width:800px; max-height:80vh; overflow-y:auto; background:var(--paper-raised); border-radius:16px; border:1px solid var(--border); box-shadow:0 30px 60px -20px rgba(0,0,0,.35); padding:28px 26px 30px; }
 .a11y-panel-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
 .a11y-panel h2{ margin:0; font-size:22px; }
 .a11y-close{ border:1px solid var(--gov-blue); background:none; border-radius:8px; padding:7px 14px; font-size:13px; color:var(--gov-blue); cursor:pointer; white-space:nowrap; }
@@ -140,15 +140,20 @@
 .a11y-options label{ display:flex; align-items:center; gap:6px; font-size:14px; cursor:pointer; }
 .a11y-options input[type="radio"]{ accent-color: var(--gov-blue); }
 
-/* --- États d'accessibilité, appliqués sur <html> (après les blocs de thème, pour gagner la cascade) --- */
+/* --- États d'accessibilité, appliqués sur <html> (après les blocs de thème, pour gagner la cascade) ---
+   Couleurs calées au pixel pres sur les captures de monparcourshandicap.gouv.fr : « Renforcer » = fond
+   gris-ardoise foncé / texte blanc, « Inverser » = fond bleu marine / texte jaune. Les boutons bleus
+   (Écouter, Partager, recherche, glossaire) suivent aussi la teinte du mode pour rester lisibles. */
 html.a11y-contrast-fort{
-  --paper:#FFFFFF; --paper-raised:#FFFFFF; --ink:#000000; --ink-muted:#000000; --border:#000000;
-  --accent:#000000; --accent-strong:#000000; --accent-tint:#EAEAEA; --signal:#000000; --signal-tint:#EAEAEA;
-  color-scheme: light;
+  --paper:#353642; --paper-raised:#3F4050; --ink:#FFFFFF; --ink-muted:#D9DAE2; --border:#FFFFFF;
+  --accent:#FFFFFF; --accent-strong:#FFFFFF; --accent-tint:#4A4B5C; --signal:#FFFFFF; --signal-tint:#4A4B5C;
+  --gov-blue:#FFFFFF; --gov-blue-strong:#FFFFFF; --gov-blue-tint:#4A4B5C;
+  color-scheme: dark;
 }
 html.a11y-contrast-inverse{
-  --paper:#000000; --paper-raised:#0D0D0D; --ink:#FFFFFF; --ink-muted:#EFEFEF; --border:#FFFFFF;
-  --accent:#FFD400; --accent-strong:#FFE873; --accent-tint:#1A1A1A; --signal:#FFD400; --signal-tint:#1A1A1A;
+  --paper:#00007B; --paper-raised:#020299; --ink:#FFFF55; --ink-muted:#FFFF99; --border:#FFFF55;
+  --accent:#FFFF55; --accent-strong:#FFFF55; --accent-tint:#0000A0; --signal:#FFFF55; --signal-tint:#0000A0;
+  --gov-blue:#FFFF55; --gov-blue-strong:#FFFF55; --gov-blue-tint:#0000A0;
   color-scheme: dark;
 }
 html.a11y-dyslexia, html.a11y-dyslexia body{
@@ -349,7 +354,7 @@ body.site-search-lock{ overflow: hidden; }
 }
 .site-search-bar-text{
   display:flex; align-items:center;
-  background:var(--paper-raised); color:var(--ink-muted);
+  background:#EEEEEE; color:var(--ink-muted);
   padding:0 14px; font-size:14px; white-space:nowrap;
   box-shadow: inset 0 -2px 0 0 var(--gov-blue);
 }
@@ -475,7 +480,7 @@ body.site-search-lock{ overflow: hidden; }
 /* --- Theme clair fige sur les pages essai : le bouton de bascule a ete retire (le site de
    reference n'a pas de mode sombre), donc on ne suit plus le systeme -- sinon deux visiteurs
    avec des reglages differents voient une page noire pour l'un, blanche pour l'autre --- */
-:root:not(#zz-jamais){
+:root:not(#zz-jamais):not(.a11y-contrast-fort):not(.a11y-contrast-inverse){
   color-scheme: light;
   --paper: #FFFFFF;
   --paper-raised: #FFFFFF;
@@ -492,3 +497,8 @@ body.site-search-lock{ overflow: hidden; }
   --gov-blue-strong: #1212FF;
   --gov-blue-tint: #E3E3FD;
 }
+/* Les deux exclusions ci-dessus laissent passer les couleurs « Renforcer »/« Inverser »
+   definies plus haut : sans elles, ce verrou (qui fige le site en theme clair) les ecrasait. */
+
+/* --- Bloc "Redige par" retire partout sur le site, a la demande de Max --- */
+.byline{ display:none !important; }
