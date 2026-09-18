@@ -44,5 +44,5 @@ jobs:
             gate.php
             index (*).html
             download
-            main.js
-            style.css
+            /main.js
+            /style.css
