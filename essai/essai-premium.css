@@ -449,7 +449,7 @@ body.site-search-lock{ overflow: hidden; }
     linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)) bottom / 100% calc(100vh - var(--listen-mask-y) - 60px) no-repeat;
 }
 .share-tools{
-  display:block; margin:26px 0 32px;
+  margin:26px 0 32px;
 }
 .share-label{ margin:0 0 16px; font-size:16px; font-weight:400; color:var(--ink); }
 .share-row{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
