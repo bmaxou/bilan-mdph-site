@@ -204,22 +204,81 @@
 
     
     
-<div class="grid grid-2">
+<style>
+.praticien-info{
+  background: var(--paper-raised); border:1px solid var(--border); border-radius: var(--radius);
+  padding: 18px 20px; margin: 22px 0;
+}
+.praticien-info strong{ color: var(--accent-strong); display:block; margin-bottom:6px; font-size:14px; letter-spacing:.02em; }
+.praticien-info p{ font-size:14.5px; color: var(--ink); margin-bottom:0; }
+.rpps-trigger{
+  background:none; border:none; padding:0; margin:0; font:inherit; font-weight:inherit;
+  color: var(--accent-strong); text-decoration: underline; text-decoration-style: dotted;
+  text-underline-offset: 3px; cursor: help;
+}
+.rpps-trigger:hover, .rpps-trigger:focus-visible{ color: var(--accent); }
+.rpps-tooltip{
+  display:none; position:absolute; z-index:5; margin-top:10px; margin-bottom:10px;
+  width: min(340px, 86vw); background: var(--paper-raised); border:1px solid var(--border); border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,.18); padding:14px 16px; font-size:13.5px; font-weight:400;
+  letter-spacing:normal; text-transform:none; color: var(--ink); line-height:1.5;
+}
+.rpps-trigger:hover + .rpps-tooltip,
+.rpps-trigger:focus-visible + .rpps-tooltip,
+.rpps-tooltip.is-open{ display:block; }
+@media (max-width:640px){ .rpps-tooltip{ width: min(280px, 92vw); } }
+</style>
+
+<div class="grid grid-3">
   <div class="card">
     <h3>Sabrina Chmura</h3>
-    <div class="a-completer">
-      <strong>RPPS : 10008870825</strong>
+    <div class="praticien-info">
+      <strong><button type="button" class="rpps-trigger" id="rppsBtn1" aria-expanded="false" aria-controls="rppsTip1">RPPS</button><span class="rpps-tooltip" id="rppsTip1" role="tooltip">Le numéro RPPS (Répertoire Partagé des Professionnels de Santé) identifie les titres réglementés de santé (psychologue, psychiatre, psychothérapeute, neurologue…), exigeant au moins un Bac+5. Des appellations comme « praticien en psychothérapie » ou « psychopraticien » ne sont pas protégées et ne demandent aucune formation : le RPPS garantit qu’on s’adresse à un vrai professionnel de santé.</span> : 10008870825</strong>
       <p>Photo réelle à ajouter.</p>
     </div>
   </div>
   <div class="card">
     <h3>Max Bouche</h3>
-    <div class="a-completer">
-      <strong>RPPS : 10010375631</strong>
+    <div class="praticien-info">
+      <strong><button type="button" class="rpps-trigger" id="rppsBtn2" aria-expanded="false" aria-controls="rppsTip2">RPPS</button><span class="rpps-tooltip" id="rppsTip2" role="tooltip">Le numéro RPPS (Répertoire Partagé des Professionnels de Santé) identifie les titres réglementés de santé (psychologue, psychiatre, psychothérapeute, neurologue…), exigeant au moins un Bac+5. Des appellations comme « praticien en psychothérapie » ou « psychopraticien » ne sont pas protégées et ne demandent aucune formation : le RPPS garantit qu’on s’adresse à un vrai professionnel de santé.</span> : 10010375631</strong>
       <p>Photo réelle à ajouter.</p>
     </div>
   </div>
+  <div class="card">
+    <h3>Cécile Fleurant</h3>
+    <p><a class="card-link" href="https://www.facebook.com/profile.php?id=61594130405588" target="_blank" rel="noopener">Voir son profil Facebook</a></p>
+  </div>
 </div>
+
+<script>
+(function(){
+  document.querySelectorAll('.rpps-trigger').forEach(function(btn){
+    var tip = btn.nextElementSibling;
+    if(!tip || !tip.classList.contains('rpps-tooltip')) return;
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = tip.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.rpps-tooltip.is-open').forEach(function(tip){
+      tip.classList.remove('is-open');
+      var btn = tip.previousElementSibling;
+      if(btn) btn.setAttribute('aria-expanded','false');
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.rpps-tooltip.is-open').forEach(function(tip){
+        tip.classList.remove('is-open');
+        var btn = tip.previousElementSibling;
+        if(btn) btn.setAttribute('aria-expanded','false');
+      });
+    }
+  });
+})();
+</script>
 
 <h2>Qui fait quoi</h2>
 <p>Le <a href="/bilan-neuropsychologique-mdph">bilan neuropsychologique</a> et le <a href="/bilan-psychologique-mdph">bilan psychologique</a> sont deux évaluations distinctes, chacune portée par la clinicienne ou le clinicien dont c'est le champ de compétence principal — voir <a href="/bilan-mdph-adulte">bilan MDPH adulte</a> pour choisir entre les deux selon votre situation.</p>
