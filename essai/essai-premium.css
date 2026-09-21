@@ -325,7 +325,6 @@ body.site-search-lock{ overflow: hidden; }
 @media (max-width: 560px){
   .bar-top{ flex-direction:column; align-items:flex-start; }
   .bar-top-right{ width:100%; align-items:flex-start; }
-  .site-search-bar{ width:100%; }
 }
 
 /* --- Bandeau de marque : logo + accroche institutionnelle a droite, comme le site de reference --- */
