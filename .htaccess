@@ -14,13 +14,23 @@ RewriteCond %{REQUEST_URI} ^/assets/
 RewriteRule ^ - [L]
 
 # Tout le reste exige le cookie posé par gate.php après saisie du bon mot de passe
+# (mot de passe de Max OU mot de passe restreint d'une collaboratrice — deux valeurs
+# de cookie possibles, voir gate.php).
 RewriteCond %{HTTP_COOKIE} !bmdph_gate=c74f96e7453df185ebd571aa6990dff8bd19201fdb4d9b17
+RewriteCond %{HTTP_COOKIE} !bmdph_gate=d479e1f46927f514ef2deecd9af37567232b56745189fc2b
 RewriteRule ^(.*)$ /gate.php?r=%{REQUEST_URI} [L,QSA]
 
-# Une fois authentifié (cookie déjà présent, cas de Max qui revient plusieurs fois),
-# l'adresse nue (racine, "/") doit toujours mener au portail des 4 sites,
+# Une fois authentifié avec le cookie de Max (cookie déjà présent, cas de Max qui revient
+# plusieurs fois), l'adresse nue (racine, "/") doit toujours mener au portail des 4 sites,
 # jamais à la page d'accueil du site Bilan MDPH.
+RewriteCond %{HTTP_COOKIE} bmdph_gate=c74f96e7453df185ebd571aa6990dff8bd19201fdb4d9b17
 RewriteRule ^$ /portail.html [L]
+
+# Accès restreint (cookie collaboratrice) : jamais le portail, ni via l'adresse nue,
+# ni en tapant /portail.html directement — toujours renvoyé vers la page d'accueil
+# du site Bilan MDPH.
+RewriteCond %{HTTP_COOKIE} bmdph_gate=d479e1f46927f514ef2deecd9af37567232b56745189fc2b
+RewriteRule ^(|portail\.html)$ /index.html [L]
 
 # Pages livrées en fichier plat (nom-de-page.html) mais servies avec une URL propre
 # (nom-de-page/), pour permettre un dépôt en un seul geste sur GitHub sans passer par

@@ -9,8 +9,13 @@
 */
 
 $SALT = 'fb7557d5e7e81792';
-$HASH = '9db76516e01e22072aeeed5abb83cdcd3a62bf8587abfafaf9371e79344b5931';
-$TOKEN = 'c74f96e7453df185ebd571aa6990dff8bd19201fdb4d9b17';
+$HASH_MAX = '9db76516e01e22072aeeed5abb83cdcd3a62bf8587abfafaf9371e79344b5931';
+$TOKEN_MAX = 'c74f96e7453df185ebd571aa6990dff8bd19201fdb4d9b17';
+// Accès restreint (ex. collaboratrice) : mot de passe distinct de celui de Max, qui ne
+// donne jamais accès au portail des autres sites, même en tapant l'adresse nue ou
+// /portail.html directement. Pour changer ce mot de passe : voir GUIDE-MISE-A-JOUR.md.
+$HASH_GUEST = '65fe55ef91ecff9608b35ceee0f5d9919156d837ebfd07c1278db5ee34599173';
+$TOKEN_GUEST = 'd479e1f46927f514ef2deecd9af37567232b56745189fc2b';
 $COOKIE_NAME = 'bmdph_gate';
 
 $error = '';
@@ -27,8 +32,8 @@ $redirect = '/portail.html';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $pass = isset($_POST['password']) ? $_POST['password'] : '';
 $attempt = hash('sha256', $SALT . ':' . $pass);
-if (hash_equals($HASH, $attempt)) {
-setcookie($COOKIE_NAME, $TOKEN, [
+if (hash_equals($HASH_MAX, $attempt)) {
+setcookie($COOKIE_NAME, $TOKEN_MAX, [
 'expires' => time() + 60 * 60 * 24 * 30,
 'path' => '/',
 'secure' => true,
@@ -36,6 +41,18 @@ setcookie($COOKIE_NAME, $TOKEN, [
 'samesite' => 'Lax',
 ]);
 header('Location: ' . $redirect);
+exit;
+} elseif (hash_equals($HASH_GUEST, $attempt)) {
+// Accès restreint : jamais le portail, même si la redirection demandée y menait.
+$guest_redirect = ($redirect === '/portail.html') ? '/index.html' : $redirect;
+setcookie($COOKIE_NAME, $TOKEN_GUEST, [
+'expires' => time() + 60 * 60 * 24 * 30,
+'path' => '/',
+'secure' => true,
+'httponly' => true,
+'samesite' => 'Lax',
+]);
+header('Location: ' . $guest_redirect);
 exit;
 } else {
 $error = 'Mot de passe incorrect.';
