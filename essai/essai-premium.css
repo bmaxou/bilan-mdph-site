@@ -1,24 +1,8 @@
-/* bilan-mdph.fr — couche additive « essai », chargée en plus de /assets/style.css
-   Ne redéfinit aucune règle existante : n'ajoute que ce qui est nouveau
-   (page d'accueil premium, recherche, assistant, apparitions au scroll).
-   Utilise les mêmes variables (--paper, --ink, --accent, --serif, --sans, --radius…). */
-
-/* --- Typographie « institutionnelle », sur les pages essai uniquement ---
-   Public Sans : police libre (open source, licence OFL), sans lien avec l'État,
-   au style sobre et net proche de ce qu'on voit sur les sites publics.
-   Remplace la police éditoriale (titres en serif) du reste du site, sur ces pages seulement. */
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap');
-:root{
-  --serif: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --sans: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --radius: 8px;
-}
-/* Le fond blanc ne doit s'appliquer qu'en thème clair : jamais seul (sinon texte clair sur fond blanc
-   quand le système est en mode sombre et qu'aucun thème n'a été choisi à la main).
-   Le thème clair choisi à la main (bouton lune) définit déjà --paper: #FFFFFF plus bas. */
-@media (prefers-color-scheme: light){
-  :root:not([data-theme="dark"]){ --paper: #FFFFFF; }
-}
+/* bilan-mdph.fr : couche additive « accueil », chargée en plus de /assets/style.css
+   sur la page d'accueil uniquement. Ne redéfinit aucune règle de base : n'ajoute que ce
+   qui est propre à l'accueil (hero, apparitions au scroll, grille thématique des pages).
+   Utilise les mêmes variables (--paper, --ink, --accent, --serif, --sans, --radius…)
+   définies dans /assets/style.css. */
 
 /* --- Apparitions au défilement ---
    Par défaut (sans JavaScript actif), le contenu est immédiatement visible :
@@ -31,6 +15,9 @@
   transition-delay: 0ms;
 }
 .js .reveal.is-visible{ opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce){
+  .js .reveal{ transition: none; opacity:1; transform:none; }
+}
 
 /* --- Hero d'accueil --- */
 .hero{
@@ -43,8 +30,8 @@
 .hero-inner{ max-width: var(--maxw-wide); margin: 0 auto; position: relative; }
 .hero-kicker{
   display:inline-flex; align-items:center; gap:8px;
-  font-size:13px; text-transform:uppercase; letter-spacing:.07em; font-weight:600;
-  color: var(--accent-strong); background: var(--paper-raised); border:1px solid var(--border);
+  font-size:13px; text-transform:uppercase; letter-spacing:.07em; font-weight:700;
+  color: var(--accent-strong); background: var(--paper-alt); border:1px solid var(--border);
   padding:7px 14px; border-radius: 999px; margin-bottom:22px;
 }
 .hero h1{ max-width: 18ch; font-size: clamp(32px, 5.2vw, 52px); margin-bottom: 18px; }
@@ -53,10 +40,10 @@
 .hero-actions .btn{ background: var(--accent); color:#fff !important; }
 .hero-actions .btn:hover{ background: var(--accent-strong); }
 .hero-actions .btn-outline{
-  display:inline-block; padding:13px 24px; border-radius:10px; font-weight:700;
+  display:inline-block; padding:13px 24px; border-radius:var(--radius); font-weight:700;
   border:1.5px solid var(--ink); color: var(--ink) !important; text-decoration:none;
 }
-.hero-actions .btn-outline:hover{ background: var(--paper-raised); }
+.hero-actions .btn-outline:hover{ background: var(--paper-alt); }
 .hero-figure{
   margin-top: 46px; padding-top: 28px; border-top: 1px solid var(--border);
   display:flex; gap: 28px 40px; flex-wrap:wrap;
@@ -65,199 +52,18 @@
 .hero-stat b{ display:block; font-family: var(--serif); font-size: 26px; color: var(--ink); }
 .hero-stat span{ font-size: 13.5px; color: var(--ink-muted); }
 
-/* --- Bascule manuelle du mode d'affichage (clair / sombre / automatique) --- */
-:root[data-theme="dark"]{
-  color-scheme: dark;
-  --paper: #15181A;
-  --paper-raised: #1D2124;
-  --ink: #ECE9E0;
-  --ink-muted: #A9AC9F;
-  --border: #33372F;
-  --accent: #8CAAC4;
-  --accent-strong: #B7CCDD;
-  --accent-tint: #212C33;
-  --signal: #E0A874;
-  --signal-tint: #2E2620;
-  --focus: #E0A874;
-  --gov-blue: #8B8BF5;
-  --gov-blue-strong: #B1B1FF;
-  --gov-blue-tint: #23234A;
-}
-:root[data-theme="light"]{
-  color-scheme: light;
-  --paper: #FFFFFF;
-  --paper-raised: #FFFFFF;
-  --ink: #1B1E1A;
-  --ink-muted: #565A50;
-  --border: #E1DCC9;
-  --accent: #2E4356;
-  --accent-strong: #1F2F3D;
-  --accent-tint: #E7EBEE;
-  --signal: #8A4A1E;
-  --signal-tint: #F3E6D9;
-  --focus: #B85C1E;
-  --gov-blue: #000091;
-  --gov-blue-strong: #1212FF;
-  --gov-blue-tint: #E3E3FD;
-}
-/* --- Couleur « gadgets d'accessibilité », valeur par défaut + suivi du mode système --- */
-:root{ --gov-blue: #000091; --gov-blue-strong: #1212FF; --gov-blue-tint: #E3E3FD; }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){ --gov-blue: #8B8BF5; --gov-blue-strong: #B1B1FF; --gov-blue-tint: #23234A; }
-}
-.theme-btn{
-  width:38px; height:38px; border-radius:50%; border:1px solid var(--border); background:var(--paper-raised);
-  display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ink); flex:none; padding:0;
-}
-.theme-btn:hover{ border-color: var(--accent); color: var(--accent-strong); }
-
-/* --- Boutons « Lecture et contrastes » / « Glossaire » dans l'en-tête --- */
-.a11y-btn{
-  display:inline-flex; align-items:center; gap:6px;
-  background:none; border:1px solid var(--gov-blue); border-radius:9px;
-  padding:8px 12px; font:inherit; font-size:13.5px; color:var(--gov-blue); cursor:pointer; white-space:nowrap;
-}
-.a11y-btn:hover{ background:var(--gov-blue-tint); border-color:var(--gov-blue-strong); color:var(--gov-blue-strong); }
-.glossary-link{
-  display:inline-flex; align-items:center; gap:6px;
-  font-size:13.5px; color:var(--gov-blue); text-decoration:none; padding:8px 4px; white-space:nowrap; font-weight:600;
-}
-.glossary-link:hover{ color:var(--gov-blue-strong); text-decoration:underline; }
-
-/* --- Panneau « Paramètres d'accessibilité » --- */
-.a11y-overlay{ position:fixed; inset:0; z-index:2100; background:rgba(20,20,18,.5); align-items:flex-start; justify-content:center; padding:8vh 18px 18px; }
-.a11y-overlay:not([hidden]){ display:flex; }
-.a11y-panel{ width:100%; max-width:800px; max-height:80vh; overflow-y:auto; background:var(--paper-raised); border-radius:16px; border:1px solid var(--border); box-shadow:0 30px 60px -20px rgba(0,0,0,.35); padding:28px 26px 30px; }
-.a11y-panel-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
-.a11y-panel h2{ margin:0; font-size:22px; }
-.a11y-close{ border:1px solid var(--gov-blue); background:none; border-radius:8px; padding:7px 14px; font-size:13px; color:var(--gov-blue); cursor:pointer; white-space:nowrap; }
-.a11y-close:hover{ background:var(--gov-blue-tint); border-color:var(--gov-blue-strong); color:var(--gov-blue-strong); }
-.a11y-panel{ border-top:4px solid var(--gov-blue); }
-.a11y-row{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0; border-top:1px solid var(--border); flex-wrap:wrap; }
-.a11y-row:first-of-type{ border-top:none; }
-.a11y-row-label{ font-weight:600; font-size:15px; min-width:180px; }
-.a11y-options{ display:flex; gap:18px; flex-wrap:wrap; }
-.a11y-options label{ display:flex; align-items:center; gap:6px; font-size:14px; cursor:pointer; }
-.a11y-options input[type="radio"]{ accent-color: var(--gov-blue); }
-
-/* --- États d'accessibilité, appliqués sur <html> (après les blocs de thème, pour gagner la cascade) ---
-   Couleurs calées au pixel pres sur les captures de monparcourshandicap.gouv.fr : « Renforcer » = fond
-   gris-ardoise foncé / texte blanc, « Inverser » = fond bleu marine / texte jaune. Les boutons bleus
-   (Écouter, Partager, recherche, glossaire) suivent aussi la teinte du mode pour rester lisibles. */
-html.a11y-contrast-fort{
-  --paper:#353642; --paper-raised:#3F4050; --ink:#FFFFFF; --ink-muted:#D9DAE2; --border:#FFFFFF;
-  --accent:#FFFFFF; --accent-strong:#FFFFFF; --accent-tint:#4A4B5C; --signal:#FFFFFF; --signal-tint:#4A4B5C;
-  --gov-blue:#FFFFFF; --gov-blue-strong:#FFFFFF; --gov-blue-tint:#4A4B5C;
-  color-scheme: dark;
-}
-html.a11y-contrast-inverse{
-  --paper:#00007B; --paper-raised:#020299; --ink:#FFFF55; --ink-muted:#FFFF99; --border:#FFFF55;
-  --accent:#FFFF55; --accent-strong:#FFFF55; --accent-tint:#0000A0; --signal:#FFFF55; --signal-tint:#0000A0;
-  --gov-blue:#FFFF55; --gov-blue-strong:#FFFF55; --gov-blue-tint:#0000A0;
-  color-scheme: dark;
-}
-html.a11y-dyslexia, html.a11y-dyslexia body{
-  font-family: Verdana, Arial, sans-serif !important; letter-spacing:.01em; word-spacing:.06em;
-}
-html.a11y-leading article, html.a11y-leading .lede{ line-height:2 !important; }
-article p{ text-align:justify; }
-html.a11y-no-justify article p{ text-align:left !important; }
-html.a11y-big-targets a, html.a11y-big-targets button{ min-height:44px; }
-html.a11y-big-targets .primary-nav a, html.a11y-big-targets .page-card, html.a11y-big-targets .theme-nav button{ padding-top:12px; padding-bottom:12px; }
-
-/* --- Barre « Écouter / Partager » en tête d'article --- */
+/* --- Barre « Écouter » simplifiée de l'accueil --- */
 .page-tools{
   display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
   margin: 0 0 26px; padding-bottom:18px; border-bottom:1px solid var(--border);
 }
 .listen-btn{
   display:inline-flex; align-items:center; gap:8px;
-  background:var(--paper-raised); border:1px solid var(--gov-blue); border-radius:9px;
-  padding:9px 16px; font:inherit; font-size:13.5px; font-weight:600; color:var(--gov-blue); cursor:pointer;
+  background:var(--paper-raised); border:1px solid var(--accent); border-radius:var(--radius);
+  padding:9px 16px; font:inherit; font-size:13.5px; font-weight:700; color:var(--accent); cursor:pointer;
 }
-.listen-btn:hover{ border-color:var(--gov-blue-strong); color:var(--gov-blue-strong); background:var(--gov-blue-tint); }
-.listen-btn.is-playing{ border-color:var(--gov-blue-strong); color:var(--gov-blue-strong); background:var(--gov-blue-tint); }
-.share-tools{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-.share-label{ font-size:13px; color:var(--ink-muted); margin-right:2px; }
-.share-btn{
-  width:34px; height:34px; border-radius:50%; border:1px solid var(--gov-blue); background:var(--paper-raised);
-  display:flex; align-items:center; justify-content:center; color:var(--gov-blue); cursor:pointer; text-decoration:none; padding:0;
-}
-.share-btn:hover{ border-color:var(--gov-blue-strong); color:var(--gov-blue-strong); background:var(--gov-blue-tint); }
-.share-btn svg{ width:15px; height:15px; }
-
-/* --- Bouton de recherche dans l'en-tête --- */
-.header-search-btn{
-  display:inline-flex; align-items:center; gap:8px;
-  background: none; border:1px solid var(--border); border-radius:9px;
-  padding:8px 14px; font:inherit; font-size:13.5px; color:var(--ink); cursor:pointer;
-}
-.header-search-btn:hover{ border-color: var(--accent); color: var(--accent); }
-.header-search-btn kbd{
-  font-family: var(--sans); font-size:11px; color: var(--ink-muted);
-  border:1px solid var(--border); border-radius:4px; padding:1px 5px; margin-left:2px;
-}
-
-/* --- Recherche : overlay --- */
-body.site-search-lock{ overflow: hidden; }
-.site-search-overlay{
-  position: fixed; inset: 0; z-index: 2000;
-  background: rgba(20, 20, 18, .5);
-  align-items:flex-start; justify-content:center;
-  padding: 10vh 18px 18px;
-}
-.site-search-overlay:not([hidden]){ display:flex; }
-.site-search-panel{
-  width: 100%; max-width: 640px; max-height: 72vh; display:flex; flex-direction:column;
-  background: var(--paper-raised); border-radius: 16px; border:1px solid var(--border);
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,.35);
-  overflow: hidden;
-}
-.site-search-head{
-  display:flex; align-items:center; gap:10px; padding: 16px 18px;
-  border-bottom: 1px solid var(--border); color: var(--ink-muted);
-}
-.site-search-input{
-  flex:1; border:none; outline:none; background:none; font:inherit; font-size:16.5px; color: var(--ink);
-}
-.site-search-close{
-  border:none; background:none; color: var(--ink-muted); font-size:12.5px; cursor:pointer; white-space:nowrap;
-}
-.site-search-close:hover{ color: var(--ink); }
-.site-search-results{ overflow-y:auto; padding: 8px; }
-.site-search-hint{ padding: 18px 12px; color: var(--ink-muted); font-size:14.5px; margin:0; }
-.site-search-result{
-  display:block; padding: 12px 14px; border-radius: 10px; text-decoration:none; color: var(--ink);
-}
-.site-search-result:hover, .site-search-result:focus-visible{ background: var(--accent-tint); }
-.site-search-result-title{ display:block; font-family: var(--serif); font-weight:600; font-size:15.5px; margin-bottom:3px; color: var(--ink); }
-.site-search-result-excerpt{ display:block; font-size:13.5px; color: var(--ink-muted); }
-.site-search-result mark, .site-assistant-quote mark{
-  background: var(--accent-tint); color: var(--accent-strong); border-radius:3px; padding:0 2px;
-}
-
-/* --- Assistant --- */
-.assistant-block{
-  background: var(--paper-raised); border:1px solid var(--border); border-radius: var(--radius);
-  padding: 30px 28px; margin: 30px 0;
-}
-.site-assistant-label{ display:block; font-family: var(--serif); font-weight:600; font-size:17px; margin-bottom:12px; }
-.site-assistant-row{ display:flex; gap:10px; flex-wrap:wrap; }
-.site-assistant-input{
-  flex:1; min-width: 220px; padding:12px 14px; border-radius:9px; border:1px solid var(--border);
-  font:inherit; font-size:15px; background: var(--paper);
-}
-.site-assistant-submit{ background: var(--accent); color:#fff !important; border:none; cursor:pointer; padding:12px 20px; border-radius:9px; font-weight:700; }
-.site-assistant-submit:hover{ background: var(--accent-strong); }
-.site-assistant-note{ font-size:12.5px; color: var(--ink-muted); margin: 10px 0 0; }
-.site-assistant-answer{ margin-top: 18px; }
-.site-assistant-loading{ color: var(--ink-muted); font-size:14.5px; }
-.site-assistant-result{
-  border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; margin-bottom: 16px;
-}
-.site-assistant-quote{ font-style: italic; font-size:15.5px; margin:0 0 8px; }
-.site-assistant-source{ font-size:13.5px; font-weight:600; text-decoration:none; }
-.site-assistant-empty{ font-size:14.5px; color: var(--ink-muted); }
+.listen-btn:hover{ border-color:var(--accent-strong); color:var(--accent-strong); background:var(--accent-tint); }
+.listen-btn.is-playing{ border-color:var(--accent-strong); color:var(--accent-strong); background:var(--accent-tint); }
 
 /* --- Grille thématique de la page d'accueil --- */
 .theme-nav{ display:flex; gap:10px; flex-wrap:wrap; margin: 8px 0 34px; }
@@ -283,7 +89,7 @@ body.site-search-lock{ overflow: hidden; }
   border-color: var(--accent);
 }
 .page-card-icon{
-  width:38px; height:38px; border-radius:10px; background: var(--accent-tint); color: var(--accent-strong);
+  width:38px; height:38px; border-radius:var(--radius); background: var(--accent-tint); color: var(--accent-strong);
   display:flex; align-items:center; justify-content:center; flex:none;
 }
 .page-card-icon svg{ width:19px; height:19px; }
@@ -294,210 +100,5 @@ body.site-search-lock{ overflow: hidden; }
 /* --- Bandeau essai (rappel discret : version de travail, non publique) --- */
 .essai-banner{
   background: var(--signal-tint); color: var(--signal); text-align:center;
-  font-size:13px; padding:9px 14px; font-weight:600;
+  font-size:13px; padding:9px 14px; font-weight:700;
 }
-
-@media (prefers-reduced-motion: reduce){
-  .js .reveal{ transition: none; opacity:1; transform:none; }
-}
-
-
-/* --- En-tete en deux rangees : marque + recherche/CTA en haut, menu + outils en dessous ---
-   (rapproche du site de reference : barre de recherche a droite, en-tete separe du menu) */
-.bar-top{
-  padding-bottom:14px;
-  border-bottom:1px solid var(--border);
-}
-.bar-top-right{
-  display:flex; flex-direction:column; align-items:flex-end; gap:8px; margin-left:auto;
-}
-.bar-nav{
-  padding-top:12px; padding-bottom:12px; gap:14px;
-}
-.bar-nav-tools{
-  display:flex; align-items:center; gap:10px; margin-left:auto; flex-wrap:wrap;
-}
-@media (max-width: 860px){
-  .bar-nav{ position:relative; }
-  .bar-nav-tools{ margin-left:0; order:2; }
-  nav.primary-nav{ order:3; }
-}
-@media (max-width: 560px){
-  .bar-top{ flex-direction:column; align-items:flex-start; }
-  .bar-top-right{ width:100%; align-items:flex-start; }
-}
-
-/* --- Bandeau de marque : logo + accroche institutionnelle a droite, comme le site de reference --- */
-.brand-group{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
-.site-tagline{
-  margin:0; max-width:360px;
-  font-family:var(--sans); font-size:14px; font-weight:400; line-height:24px; color:var(--ink);
-}
-@media (max-width:700px){ .site-tagline{ display:none; } }
-
-/* --- Accueil en icone maison seule dans le menu, comme le site de reference (au lieu du mot "Accueil") --- */
-.nav-home{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:40px; height:40px; padding:6px !important; margin-right:2px; border-radius:4px;
-  color:var(--gov-blue);
-}
-.nav-home:hover{ background:var(--gov-blue-tint); color:var(--gov-blue-strong); text-decoration:none; }
-.nav-home[aria-current="page"]{ box-shadow: inset 0 -2px 0 0 var(--gov-blue); }
-
-/* --- Recherche : barre au pixel pres du site de reference (fond gris, ligne bleue sous le champ,
-   loupe blanche sur carre bleu a droite) : bouton decoratif qui ouvre l'overlay de recherche existant --- */
-.header-utility-links{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
-.site-search-bar{
-  display:flex; align-items:stretch; height:40px; border:none; padding:0; margin:0;
-  font:inherit; cursor:pointer; border-radius:4px; overflow:hidden; background:none;
-}
-.site-search-bar-text{
-  display:flex; align-items:center;
-  background:#EEEEEE; color:var(--ink-muted);
-  padding:0 14px; font-size:14px; white-space:nowrap;
-  box-shadow: inset 0 -2px 0 0 var(--gov-blue);
-}
-.site-search-bar-icon{
-  display:flex; align-items:center; justify-content:center; flex:none;
-  width:40px; background:var(--gov-blue); color:#fff;
-}
-.site-search-bar:hover .site-search-bar-icon{ background:var(--gov-blue-strong); }
-@media (max-width:560px){
-  .site-search-bar-text{ display:none; }
-  .site-search-bar{ border-radius:4px; }
-  .site-search-bar-icon{ border-radius:4px; }
-}
-
-/* --- Écouter / Partager, restyles au pixel pres du site de reference : bouton "Écouter" en deux
-   cases separees par un trait (menu + lecture), place AVANT le titre ; "Partager la page" placé
-   APRÈS le titre, empilé, avec des icônes carrées sans bordure ---
-   Distances calées au pixel pres sur monparcourshandicap.gouv.fr/glossaire/mdph :
-   fil d'Ariane -> barre Écouter = 40px, barre Écouter -> titre = 24px,
-   titre -> "Partager la page" = 40px, label -> icônes = 16px, icônes espacées de 16px. */
-.listen-tool{ margin:28px 0 24px; position:relative; }
-.listen-bar{
-  display:inline-flex; align-items:stretch; height:30px; margin:0;
-  border-radius:2px; overflow:hidden; box-shadow:0 0 0 1px var(--gov-blue);
-}
-.listen-cell{
-  display:flex; align-items:center; justify-content:center; gap:6px;
-  height:30px; padding:0 10px; margin:0; border:none; border-right:1px solid var(--gov-blue);
-  background:var(--paper); color:var(--gov-blue); font:inherit; font-size:12px; font-weight:400;
-  cursor:pointer; white-space:nowrap;
-}
-.listen-cell[hidden]{ display:none; }
-.listen-cell:last-child{ border-right:none; }
-.listen-cell:hover{ background:var(--gov-blue-tint); }
-.listen-cell-menu{ width:30px; padding:0; background:var(--gov-blue); color:#fff; }
-.listen-cell-menu:hover{ background:var(--gov-blue-strong); }
-.listen-cell-play.is-playing{ background:#18753C; color:#fff; }
-.listen-cell-play.is-playing:hover{ background:#146333; }
-.listen-cell-stop{ width:30px; padding:0; background:#CE0500; color:#fff; border-right-color:#CE0500; }
-.listen-cell-stop:hover{ background:#A80400; }
-
-.listen-menu{
-  position:absolute; z-index:40; top:34px; left:0; width:280px;
-  background:var(--paper); border:1px solid var(--border); border-radius:4px;
-  box-shadow:0 8px 24px rgba(0,0,0,.14); padding:6px; font-size:13.5px;
-}
-.listen-menu-title{ margin:6px 8px 8px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-muted); }
-.listen-speed-row{ display:flex; gap:6px; padding:0 8px 10px; }
-.listen-speed-btn{
-  flex:1; padding:6px 0; border:1px solid var(--border); border-radius:4px; background:var(--paper);
-  color:var(--ink); font-size:12.5px; cursor:pointer;
-}
-.listen-speed-btn.is-active{ border-color:var(--gov-blue); color:var(--gov-blue); font-weight:600; background:var(--gov-blue-tint); }
-.listen-menu-item{
-  display:flex; align-items:center; gap:10px; width:100%; padding:9px 8px; margin:0;
-  border:none; background:none; border-radius:3px; text-align:left; color:var(--ink); font-size:13.5px; cursor:pointer;
-}
-.listen-menu-item svg{ flex:none; color:var(--gov-blue); }
-.listen-menu-item:hover{ background:var(--gov-blue-tint); }
-.listen-menu-item.is-disabled{ color:var(--ink-muted); cursor:not-allowed; }
-.listen-menu-item.is-disabled svg{ color:var(--ink-muted); }
-.listen-menu-item.is-disabled:hover{ background:none; }
-.listen-menu-toggle{ position:relative; }
-.listen-toggle-switch{
-  margin-left:auto; width:32px; height:18px; border-radius:10px; background:var(--border); flex:none; position:relative;
-}
-.listen-toggle-switch::after{
-  content:""; position:absolute; top:2px; left:2px; width:14px; height:14px; border-radius:50%; background:#fff;
-  box-shadow:0 1px 2px rgba(0,0,0,.3); transition:left .15s;
-}
-.listen-menu-toggle.is-on .listen-toggle-switch{ background:var(--gov-blue); }
-.listen-menu-toggle.is-on .listen-toggle-switch::after{ left:16px; }
-
-.listen-popover{
-  position:absolute; z-index:40; top:34px; width:260px;
-  background:var(--paper); border:1px solid var(--border); border-radius:4px;
-  box-shadow:0 8px 24px rgba(0,0,0,.14); padding:12px 14px; font-size:13px; color:var(--ink); line-height:1.5;
-}
-.listen-popover p{ margin:0; }
-
-.listen-active-block{ background:#DFF3E4; border-radius:3px; box-shadow:0 0 0 4px #DFF3E4; transition:background .15s; }
-.listen-clickable{ cursor:pointer; }
-.listen-text-boost{ font-weight:600; letter-spacing:.005em; }
-.listen-text-mode .site-header, .listen-text-mode .breadcrumb, .listen-text-mode .site-footer,
-.listen-text-mode .box-source, .listen-text-mode .glossary-nav{ display:none !important; }
-.listen-text-mode main article{ max-width:680px; margin:40px auto; font-size:19px; line-height:1.75; }
-.listen-mask{
-  position:fixed; inset:0; z-index:30; pointer-events:none;
-  --listen-mask-y:50vh;
-  background:
-    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)) top / 100% calc(var(--listen-mask-y) - 60px) no-repeat,
-    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)) bottom / 100% calc(100vh - var(--listen-mask-y) - 60px) no-repeat;
-}
-.share-tools{
-  margin:26px 0 32px;
-}
-.share-label{ margin:0 0 16px; font-size:16px; font-weight:400; color:var(--ink); }
-.share-row{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-.share-btn{
-  width:40px; height:44px; border-radius:0; border:none; background:none; box-shadow:0 0 0 1px #DDDDDD inset;
-  display:flex; align-items:center; justify-content:center; color:var(--gov-blue); cursor:pointer; text-decoration:none; padding:0;
-}
-.share-btn:hover{ background:var(--gov-blue-tint); }
-.share-btn svg{ width:20px; height:20px; }
-
-/* --- Glossaire : regroupement par lettre + liste de cartes-liens vers chaque page de terme --- */
-.glossary-letter-group{ margin-top:34px; }
-.glossary-letter-group:first-of-type{ margin-top:22px; }
-.glossary-letter-heading{
-  font-family:var(--sans); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
-  color:var(--gov-blue); margin:0 0 10px; padding-bottom:6px; border-bottom:1px solid var(--border);
-}
-.glossary-list{ display:flex; flex-direction:column; }
-.glossary-term-link{
-  display:block; padding:16px 4px; border-top:1px solid var(--border); text-decoration:none; color:inherit;
-}
-.glossary-letter-group .glossary-list .glossary-term-link:first-child{ border-top:none; }
-.glossary-term-link:hover h3{ color:var(--gov-blue-strong); text-decoration:underline; }
-.glossary-term-link h3{ margin:0 0 4px; font-size:17px; color:var(--ink); }
-.glossary-term-link .sigle{ color:var(--gov-blue); font-weight:700; }
-.glossary-term-link p{ margin:0; color:var(--ink-muted); font-size:14.5px; }
-
-/* --- Theme clair fige sur les pages essai : le bouton de bascule a ete retire (le site de
-   reference n'a pas de mode sombre), donc on ne suit plus le systeme -- sinon deux visiteurs
-   avec des reglages differents voient une page noire pour l'un, blanche pour l'autre --- */
-:root:not(#zz-jamais):not(.a11y-contrast-fort):not(.a11y-contrast-inverse){
-  color-scheme: light;
-  --paper: #FFFFFF;
-  --paper-raised: #FFFFFF;
-  --ink: #1B1E1A;
-  --ink-muted: #565A50;
-  --border: #E1DCC9;
-  --accent: #2E4356;
-  --accent-strong: #1F2F3D;
-  --accent-tint: #E7EBEE;
-  --signal: #8A4A1E;
-  --signal-tint: #F3E6D9;
-  --focus: #B85C1E;
-  --gov-blue: #000091;
-  --gov-blue-strong: #1212FF;
-  --gov-blue-tint: #E3E3FD;
-}
-/* Les deux exclusions ci-dessus laissent passer les couleurs « Renforcer »/« Inverser »
-   definies plus haut : sans elles, ce verrou (qui fige le site en theme clair) les ecrasait. */
-
-/* --- Bloc "Redige par" retire partout sur le site, a la demande de Max --- */
-.byline{ display:none !important; }
