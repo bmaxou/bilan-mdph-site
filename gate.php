@@ -1,6 +1,6 @@
 <?php
 /**
-* Cabinet Bouche & Chmura — bilan-mdph.fr
+* Cabinet Bouche & Chmura : bilan-mdph.fr
 * Page de protection temporaire (phase privée, avant validation et mise en ligne publique).
 *
 * Pour changer le mot de passe : voir GUIDE-MISE-A-JOUR.md, section « Mot de passe du site ».
@@ -24,7 +24,7 @@ if (!preg_match('#^/[a-zA-Z0-9/_\-\.]*$#', $redirect)) {
 $redirect = '/portail.html';
 }
 // Entrer par l'adresse nue (bilan-mdph.fr) doit toujours mener au portail des 4 sites,
-// pas à la page d'accueil du site Bilan MDPH — c'est l'habitude de Max.
+// pas à la page d'accueil du site Bilan MDPH, c'est l'habitude de Max.
 if ($redirect === '/' || $redirect === '/index.html') {
 $redirect = '/portail.html';
 }
@@ -65,7 +65,7 @@ $error = 'Mot de passe incorrect.';
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Accès privé — bilan-mdph.fr</title>
+<title>Accès privé : bilan-mdph.fr</title>
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=fraunces@400,500,600&f[]=general-sans@400,500,600&display=swap">
 <link rel="stylesheet" href="/assets/style.css">
