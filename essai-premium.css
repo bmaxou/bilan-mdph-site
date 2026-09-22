@@ -1,0 +1,104 @@
+/* bilan-mdph.fr : couche additive « accueil », chargée en plus de /assets/style.css
+   sur la page d'accueil uniquement. Ne redéfinit aucune règle de base : n'ajoute que ce
+   qui est propre à l'accueil (hero, apparitions au scroll, grille thématique des pages).
+   Utilise les mêmes variables (--paper, --ink, --accent, --serif, --sans, --radius…)
+   définies dans /assets/style.css. */
+
+/* --- Apparitions au défilement ---
+   Par défaut (sans JavaScript actif), le contenu est immédiatement visible :
+   l'animation ne s'applique que si le script a pu poser la classe "js" sur <html>,
+   pour ne jamais risquer de cacher du contenu si le script ne se charge pas. */
+.js .reveal{
+  opacity: 1;
+  transform: none;
+  transition: opacity .5s cubic-bezier(.2,.7,.3,1);
+  transition-delay: 0ms;
+}
+.js .reveal.is-visible{ opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce){
+  .js .reveal{ transition: none; opacity:1; transform:none; }
+}
+
+/* --- Hero d'accueil --- */
+.hero{
+  position: relative;
+  padding: 76px 20px 64px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.hero-inner{ max-width: var(--maxw-wide); margin: 0 auto; position: relative; }
+.hero-kicker{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:13px; text-transform:uppercase; letter-spacing:.07em; font-weight:700;
+  color: var(--accent-strong); background: var(--paper-alt); border:1px solid var(--border);
+  padding:7px 14px; border-radius: 999px; margin-bottom:22px;
+}
+.hero h1{ max-width: 18ch; font-size: clamp(32px, 5.2vw, 52px); margin-bottom: 18px; }
+.hero .lede{ max-width: 58ch; font-size: clamp(17px, 2vw, 20px); }
+.hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top: 30px; }
+.hero-actions .btn{ background: var(--accent); color:#fff !important; }
+.hero-actions .btn:hover{ background: var(--accent-strong); }
+.hero-actions .btn-outline{
+  display:inline-block; padding:13px 24px; border-radius:var(--radius); font-weight:700;
+  border:1.5px solid var(--ink); color: var(--ink) !important; text-decoration:none;
+}
+.hero-actions .btn-outline:hover{ background: var(--paper-alt); }
+.hero-figure{
+  margin-top: 46px; padding-top: 28px; border-top: 1px solid var(--border);
+  display:flex; gap: 28px 40px; flex-wrap:wrap;
+}
+.hero-stat{ min-width: 160px; }
+.hero-stat b{ display:block; font-family: var(--serif); font-size: 26px; color: var(--ink); }
+.hero-stat span{ font-size: 13.5px; color: var(--ink-muted); }
+
+/* --- Barre « Écouter » simplifiée de l'accueil --- */
+.page-tools{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  margin: 0 0 26px; padding-bottom:18px; border-bottom:1px solid var(--border);
+}
+.listen-btn{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--paper-raised); border:1px solid var(--accent); border-radius:var(--radius);
+  padding:9px 16px; font:inherit; font-size:13.5px; font-weight:700; color:var(--accent); cursor:pointer;
+}
+.listen-btn:hover{ border-color:var(--accent-strong); color:var(--accent-strong); background:var(--accent-tint); }
+.listen-btn.is-playing{ border-color:var(--accent-strong); color:var(--accent-strong); background:var(--accent-tint); }
+
+/* --- Grille thématique de la page d'accueil --- */
+.theme-nav{ display:flex; gap:10px; flex-wrap:wrap; margin: 8px 0 34px; }
+.theme-nav button{
+  border:1px solid var(--border); background: var(--paper-raised); border-radius:999px;
+  padding:8px 16px; font:inherit; font-size:13.5px; color: var(--ink-muted); cursor:pointer;
+}
+.theme-nav button.active, .theme-nav button:hover{ border-color: var(--accent); color: var(--accent-strong); background: var(--accent-tint); }
+
+.page-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
+@media (max-width: 860px){ .page-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px){ .page-grid{ grid-template-columns: 1fr; } }
+
+.page-card{
+  display:flex; flex-direction:column; gap:10px;
+  background: var(--paper-raised); border:1px solid var(--border); border-radius: var(--radius);
+  padding: 20px 20px 18px; text-decoration:none; color: var(--ink);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.page-card:hover, .page-card:focus-visible{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 30px -18px rgba(20,20,18,.25);
+  border-color: var(--accent);
+}
+.page-card-icon{
+  width:38px; height:38px; border-radius:var(--radius); background: var(--accent-tint); color: var(--accent-strong);
+  display:flex; align-items:center; justify-content:center; flex:none;
+}
+.page-card-icon svg{ width:19px; height:19px; }
+.page-card h3{ margin: 4px 0 0; font-size:16.5px; }
+.page-card p{ margin:0; font-size:13.5px; color: var(--ink-muted); flex:1; }
+.page-card-go{ font-size:13px; font-weight:700; color: var(--accent); }
+
+/* --- Bandeau essai (rappel discret : version de travail, non publique) --- */
+.essai-banner{
+  background: var(--signal-tint); color: var(--signal); text-align:center;
+  font-size:13px; padding:9px 14px; font-weight:700;
+}

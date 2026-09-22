@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://bilan-mdph.fr/</loc></url>
+  <url><loc>https://bilan-mdph.fr/aidants-et-proches/</loc></url>
   <url><loc>https://bilan-mdph.fr/autisme-adulte-mdph/</loc></url>
   <url><loc>https://bilan-mdph.fr/bilan-a-distance/</loc></url>
   <url><loc>https://bilan-mdph.fr/bilan-en-deux-jours/</loc></url>
   <url><loc>https://bilan-mdph.fr/bilan-mdph-adulte/</loc></url>
   <url><loc>https://bilan-mdph.fr/bilan-neuropsychologique-mdph/</loc></url>
+  <url><loc>https://bilan-mdph.fr/bilan-neuropsychologique-personne-agee/</loc></url>
   <url><loc>https://bilan-mdph.fr/bilan-psychologique-mdph/</loc></url>
   <url><loc>https://bilan-mdph.fr/certificat-medical-mdph/</loc></url>
   <url><loc>https://bilan-mdph.fr/checklist-dossier-mdph-2026/</loc></url>
@@ -15,7 +17,9 @@
   <url><loc>https://bilan-mdph.fr/handicap-cognitif-mdph/</loc></url>
   <url><loc>https://bilan-mdph.fr/handicap-invisible-rqth/</loc></url>
   <url><loc>https://bilan-mdph.fr/handicap-psychique-mdph/</loc></url>
+  <url><loc>https://bilan-mdph.fr/handicap-vieillissant/</loc></url>
   <url><loc>https://bilan-mdph.fr/lieux-de-consultation/</loc></url>
+  <url><loc>https://bilan-mdph.fr/mdph-apres-60-ans/</loc></url>
   <url><loc>https://bilan-mdph.fr/mentions-legales/</loc></url>
   <url><loc>https://bilan-mdph.fr/pieces-a-joindre-dossier-mdph/</loc></url>
   <url><loc>https://bilan-mdph.fr/prix-bilan-mdph/</loc></url>
@@ -25,4 +29,26 @@
   <url><loc>https://bilan-mdph.fr/retentissement-fonctionnel/</loc></url>
   <url><loc>https://bilan-mdph.fr/tdah-adulte-mdph/</loc></url>
   <url><loc>https://bilan-mdph.fr/tdah-rqth/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/aah/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/aeeh/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/apa/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/bilan-neuropsy/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/bilan-psy/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/cdaph/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/cerfa-demande/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/cerfa-medical/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/cmi/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/cnsa/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/conseil-departemental/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/consultation-memoire/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/droit-doption/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/gir/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/mdph/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/pch/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/projet-de-vie/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/retentissement/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/rqth/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/tnd/</loc></url>
+  <url><loc>https://bilan-mdph.fr/glossaire/trouble-neurocognitif/</loc></url>
 </urlset>

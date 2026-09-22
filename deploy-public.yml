@@ -1,0 +1,51 @@
+name: Deploiement copie publique (bilan-mdph.bilan-mdph.fr)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recuperation du code
+        uses: actions/checkout@v4
+
+      - name: Retrait de la protection par mot de passe (copie publique uniquement)
+        run: |
+          rm -f gate.php
+          cat > .htaccess << 'EOF'
+          # Cabinet Bouche & Chmura — copie publique de bilan-mdph.fr (bilan-mdph.bilan-mdph.fr)
+          # Sans protection par mot de passe : ce sous-domaine est volontairement accessible sans code.
+
+          RewriteEngine On
+          RewriteBase /
+
+          RewriteRule ^essai/glossaire/?$ /glossaire/ [R=301,L]
+          RewriteRule ^essai/glossaire/(.*)$ /glossaire/$1 [R=301,L]
+
+          RewriteRule ^(aidants-et-proches|bilan-en-deux-jours|bilan-mdph-adulte|bilan-neuropsychologique-mdph|bilan-neuropsychologique-personne-agee|bilan-psychologique-mdph|certificat-medical-mdph|checklist-dossier-mdph-2026|confidentialite|dossier-mdph-adulte|equipe|handicap-cognitif-mdph|handicap-invisible-rqth|handicap-psychique-mdph|handicap-vieillissant|lieux-de-consultation|mdph-apres-60-ans|mentions-legales|pieces-a-joindre-dossier-mdph|prix-bilan-mdph|projet-de-vie-mdph|questionnaire-complementaire-tnd|reforme-formulaire-mdph-2026|retentissement-fonctionnel|tdah-adulte-mdph|tdah-rqth)/$ /$1 [R=301,L]
+          RewriteRule ^(aidants-et-proches|bilan-en-deux-jours|bilan-mdph-adulte|bilan-neuropsychologique-mdph|bilan-neuropsychologique-personne-agee|bilan-psychologique-mdph|certificat-medical-mdph|checklist-dossier-mdph-2026|confidentialite|dossier-mdph-adulte|equipe|handicap-cognitif-mdph|handicap-invisible-rqth|handicap-psychique-mdph|handicap-vieillissant|lieux-de-consultation|mdph-apres-60-ans|mentions-legales|pieces-a-joindre-dossier-mdph|prix-bilan-mdph|projet-de-vie-mdph|questionnaire-complementaire-tnd|reforme-formulaire-mdph-2026|retentissement-fonctionnel|tdah-adulte-mdph|tdah-rqth)$ /$1.html [L]
+
+          ErrorDocument 404 /404.html
+          EOF
+
+      - name: Deploiement FTP vers OVH (copie publique)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+          server-dir: /bilan-mdph-public/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            medias/**
+            gate.php
+            index (*).html
+            download
+            /main.js
+            /style.css
