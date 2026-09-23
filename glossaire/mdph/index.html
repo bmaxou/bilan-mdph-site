@@ -78,13 +78,6 @@
         <label><input type="radio" name="a11y-leading" value="augmenter"> Augmenter</label>
       </span>
     </div>
-    <div class="a11y-row" data-a11y-group="justify">
-      <span class="a11y-row-label">Justification</span>
-      <span class="a11y-options">
-        <label><input type="radio" name="a11y-justify" value="defaut"> Par défaut</label>
-        <label><input type="radio" name="a11y-justify" value="supprimer"> Supprimer</label>
-      </span>
-    </div>
     <div class="a11y-row" data-a11y-group="targets">
       <span class="a11y-row-label">Augmenter la taille des zones interactives</span>
       <span class="a11y-options">
@@ -203,6 +196,8 @@
 
 <p class="reveal"><a href="/glossaire/">&larr; Retour au glossaire complet</a></p>
 
+<p class="reveal"><a href="/mdph-c-est-quoi">La MDPH, à quoi elle sert et comment se passe une demande</a></p>
+
   </article>
 </div></div>
 </main>
@@ -258,7 +253,6 @@
     html.classList.toggle('a11y-contrast-inverse', prefs.contrast === 'inverse');
     html.classList.toggle('a11y-dyslexia', prefs.dyslexia === 'adapter');
     html.classList.toggle('a11y-leading', prefs.leading === 'augmenter');
-    html.classList.toggle('a11y-no-justify', prefs.justify === 'supprimer');
     html.classList.toggle('a11y-big-targets', prefs.targets === 'augmenter');
   }
   var prefs = readPrefs();
