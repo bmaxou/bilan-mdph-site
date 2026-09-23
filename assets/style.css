@@ -289,6 +289,7 @@ html.a11y-big-targets .primary-nav a, html.a11y-big-targets .page-card, html.a11
 .listen-menu-toggle.is-on .listen-toggle-switch{ background:var(--accent); }
 .listen-menu-toggle.is-on .listen-toggle-switch::after{ left:16px; }
 
+.breadcrumb .container-wide{ padding-top:14px; padding-bottom:14px; }
 .breadcrumb ol{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px; font-size:13.5px; color:var(--ink-muted); }
 .breadcrumb li{ display:flex; align-items:center; gap:6px; }
 .breadcrumb li + li::before{ content:"/"; color:var(--border); }
@@ -524,6 +525,8 @@ tbody tr:nth-child(even){ background: rgba(0,0,0,0.015); }
   font-weight:700; padding:13px 24px; border-radius: var(--radius); margin-top:6px;
 }
 .btn:hover{ background:#EAF0F5; }
+.btn.btn-primary{ background:var(--accent) !important; color:#fff !important; }
+.btn.btn-primary:hover{ background:var(--accent-strong) !important; color:#fff !important; }
 .btn-ghost{
   display:inline-block; margin-top:10px; margin-left:10px; color:#fff !important; text-decoration:underline;
   font-size:14.5px;
