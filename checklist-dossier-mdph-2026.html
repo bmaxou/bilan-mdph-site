@@ -47,11 +47,11 @@
     <button class="nav-toggle" aria-expanded="false" aria-label="Ouvrir le menu">Menu &#9776;</button>
     <nav class="primary-nav" aria-label="Navigation principale">
       <a class="nav-home" href="/index.html" title="Accueil" aria-label="Accueil"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V19a1 1 0 0 0 1 1H10v-5.5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1V20h3.5a1 1 0 0 0 1-1V9.5"/></svg></a>
-      <a href="/bilan-mdph-adulte">Bilan MDPH adulte</a>
-      <a href="/retentissement-fonctionnel">Retentissement fonctionnel</a>
+      <a href="/mdph-c-est-quoi">La MDPH, c'est quoi</a>
+      <a href="/bilan-mdph-adulte">Adultes</a>
       <a href="/mdph-apres-60-ans">Personnes âgées</a>
-      <a href="/bilan-a-distance/">Bilan à distance</a>
-      <a href="/equipe">Équipe</a>
+      <a href="/retentissement-fonctionnel">Décrire les difficultés</a>
+      <a href="/equipe">Le cabinet</a>
     </nav>
     
       <div class="bar-nav-tools"><a class="btn btn-primary" href="https://www.doctolib.fr/psychotherapeute/paris/max-bouche" target="_blank" rel="noopener">Prendre rendez-vous</a></div>
@@ -84,13 +84,6 @@
       <span class="a11y-options">
         <label><input type="radio" name="a11y-leading" value="defaut"> Par défaut</label>
         <label><input type="radio" name="a11y-leading" value="augmenter"> Augmenter</label>
-      </span>
-    </div>
-    <div class="a11y-row" data-a11y-group="justify">
-      <span class="a11y-row-label">Justification</span>
-      <span class="a11y-options">
-        <label><input type="radio" name="a11y-justify" value="defaut"> Par défaut</label>
-        <label><input type="radio" name="a11y-justify" value="supprimer"> Supprimer</label>
       </span>
     </div>
     <div class="a11y-row" data-a11y-group="targets">
@@ -217,10 +210,38 @@
 
 <h2 id="obligatoires">Pièces obligatoires</h2>
 <ul class="checklist">
-<li><span class="tag tag-oblig">Obligatoire</span><span>Formulaire de demande MDPH, Cerfa n°15692*01, entièrement complété et signé.</span></li>
-<li><span class="tag tag-oblig">Obligatoire</span><span>Certificat médical, Cerfa n°15695*01, daté de moins de 12 mois, rempli par un médecin. Voir <a href="/certificat-medical-mdph">la page dédiée</a>.</span></li>
+<li><span class="tag tag-oblig">Obligatoire</span><span>Formulaire de demande MDPH, Cerfa n°15692*01, entièrement complété et signé. À télécharger sur <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/R19993" rel="noopener">Service-Public</a>. Vérifiez que vous utilisez bien la version en vigueur au moment du dépôt.</span></li>
+<li><span class="tag tag-oblig">Obligatoire</span><span>Certificat médical, Cerfa n°15695*01, daté de moins de 12 mois. Il est rempli par un médecin, pas par vous. Le formulaire est disponible sur <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/R19993" rel="noopener">Service-Public</a>, votre médecin peut aussi l'avoir. Voir <a href="/certificat-medical-mdph">la page dédiée</a>.</span></li>
 <li><span class="tag tag-oblig">Obligatoire</span><span>Justificatif d'identité en cours de validité.</span></li>
-<li><span class="tag tag-oblig">Obligatoire</span><span>Justificatif de domicile de moins de 3 mois.</span></li>
+<details class="box box-source box-fold">
+  <summary class="box-label">Ce qui est accepté comme justificatif d'identité<svg class="fold-arrow" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Une photocopie recto verso, lisible, au nom de la personne concernée par la demande. Pour un enfant, joindre aussi la pièce d'identité du représentant légal.</p>
+  <ul>
+    <li>Carte nationale d'identité, recto et verso.</li>
+    <li>Passeport.</li>
+    <li>Titre de séjour en cours de validité, ou tout autre document autorisant le séjour en France.</li>
+    <li>Pour un enfant, à défaut de carte d'identité : livret de famille faisant apparaître le nom des parents et celui de l'enfant, ou acte de naissance.</li>
+    <li>Si la personne est sous protection juridique, joindre en plus une attestation du jugement.</li>
+  </ul>
+  <p>Les MDPH n'ont pas toutes la même liste. Celle de votre département fait foi.</p>
+</details>
+<li><span class="tag tag-oblig">Obligatoire</span><span>Justificatif de domicile récent, moins de 3 mois pour la plupart des MDPH.</span></li>
+<details class="box box-source box-fold">
+  <summary class="box-label">Ce qui est accepté comme justificatif de domicile<svg class="fold-arrow" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Un seul document suffit. Il doit porter vos nom et prénom et être récent.</p>
+  <ul>
+    <li>Facture d'électricité, de gaz, d'eau.</li>
+    <li>Facture de téléphone, fixe ou mobile, ou d'accès internet.</li>
+    <li>Quittance de loyer d'un bailleur social ou d'une agence immobilière. Une quittance écrite à la main n'est pas acceptée.</li>
+    <li>Titre de propriété.</li>
+    <li>Avis d'imposition ou certificat de non-imposition.</li>
+    <li>Attestation ou facture d'assurance du logement.</li>
+    <li>Relevé de la Caf mentionnant une aide au logement.</li>
+  </ul>
+  <p>Si vous êtes hébergé chez un proche, il faut trois documents : la photocopie de sa pièce d'identité, une attestation d'hébergement datée et signée de sa main, et son propre justificatif de domicile.</p>
+  <p>Si vous n'avez pas de domicile stable, une domiciliation est possible auprès d'un centre communal d'action sociale ou d'un organisme agréé.</p>
+  <p>Pour un enfant, c'est le justificatif du représentant légal qui est joint.</p>
+</details>
 </ul>
 
 <h2 id="facultatives">Pièces facultatives mais utiles</h2>
@@ -228,28 +249,41 @@
 <li><span class="tag tag-util">Facultatif</span><span>Compte rendu de bilan neuropsychologique ou psychologique. Voir <a href="/pieces-a-joindre-dossier-mdph">pièces à joindre au dossier</a> pour savoir dans quels cas il est pertinent de le fournir.</span></li>
 <li><span class="tag tag-util">Facultatif</span><span>Questionnaire complémentaire pour les troubles du neurodéveloppement (TND). Voir section ci-dessous.</span></li>
 <li><span class="tag tag-util">Facultatif</span><span>Projet de vie rédigé par la personne. Voir <a href="/projet-de-vie-mdph">comment le rédiger</a>.</span></li>
-<li><span class="tag tag-util">Facultatif</span><span>Comptes rendus de suivi (psychiatre, psychologue, médecin traitant) illustrant l'ancienneté et l'évolution du trouble.</span></li>
+<li><span class="tag tag-util">Facultatif</span><span>Compte rendu de suivi, si un suivi est en cours. Il peut être rédigé par un psychiatre, un psychothérapeute, un psychologue ou votre médecin traitant. Un écrit court et concret, qui dit depuis quand le suivi a lieu et à quelle fréquence, vaut mieux qu'un long document.</span></li>
 <li><span class="tag tag-util">Facultatif</span><span>Justificatifs professionnels ou scolaires (aménagements déjà en place, arrêts de travail, avis de la médecine du travail).</span></li>
+<details class="box box-source box-fold">
+  <summary class="box-label">Ce que peuvent être ces justificatifs<svg class="fold-arrow" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <ul>
+    <li>Un aménagement déjà en place : le courrier de l'employeur, du service des ressources humaines, ou le plan d'accompagnement reçu de l'établissement scolaire.</li>
+    <li>Un arrêt de travail : le volet destiné à l'employeur, ou le décompte de la caisse d'assurance maladie.</li>
+    <li>Un avis de la médecine du travail : la fiche d'aptitude remise après la visite, qui mentionne les restrictions retenues.</li>
+    <li>Une situation scolaire : un bulletin, un compte rendu d'équipe éducative, ou le document de suivi transmis par l'établissement.</li>
+  </ul>
+  <p>Un document déjà en votre possession suffit. Rien ne doit être demandé spécialement à un employeur ou à un établissement pour ce dossier.</p>
+</details>
 </ul>
 
 <h2 id="tnd">Le questionnaire complémentaire TND</h2>
 <p>Depuis février 2026, un document d'information complémentaire est disponible pour les personnes en situation de handicap liée à des altérations de fonctions mentales, cognitives ou psychiques, dont les troubles du neurodéveloppement. Il est <strong>entièrement facultatif</strong> et n'a pas de numéro Cerfa. Détail complet sur la page <a href="/questionnaire-complementaire-tnd">questionnaire complémentaire TND</a>.</p>
 
-<div class="box box-source">
-  <span class="box-label">Sources</span>
+<details class="box box-source box-fold">
+  <summary class="box-label">Sources<svg class="fold-arrow" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
   <ul>
     <li>CNSA, « Activité des MDPH en 2023 », cnsa.fr, publié le 30/09/2025</li>
     <li>Mon Parcours Handicap, formulaire Cerfa n°15692*01, mis à jour le 06/08/2026</li>
     <li>Mon Parcours Handicap, certificat médical Cerfa n°15695*01, mis à jour le 10/08/2026</li>
+    <li>Service-Public, Demande ou renouvellement de prestations Handicap, formulaire Cerfa 15692*01 et certificat médical, https://www.service-public.gouv.fr/particuliers/vosdroits/R19993</li>
+    <li>Service-Public, justificatifs de domicile acceptés, https://www.service-public.gouv.fr/particuliers/vosdroits/F14807</li>
+    <li>Mon Parcours Handicap, dépôt du dossier et pièces justificatives, https://www.monparcourshandicap.gouv.fr/aides/le-depot-du-dossier-et-le-traitement-de-la-demande-par-la-maison-departementale-des-personnes</li>
   </ul>
-</div>
+</details>
 
 <h2 id="telecharger">Télécharger et imprimer</h2>
 <p>Cette page est directement imprimable (Ctrl/Cmd+P) et téléchargeable au format PDF ci-dessous, sans inscription ni adresse e-mail requise.</p>
 <div class="cta-secondary">
   <a class="btn" style="background:var(--accent);color:#fff !important;" href="/checklist-dossier-mdph-2026.pdf">Télécharger la checklist en PDF</a>
 </div>
-<p style="font-size:13px;color:var(--ink-muted);">Version 1.0, 13 septembre 2026. Une inscription optionnelle aux mises à jour sera proposée prochainement.</p>
+<p style="font-size:13px;color:var(--ink-muted);">Version 1.0, 13 septembre 2026. Cette page est revue à chaque évolution des formulaires MDPH.</p>
 
 
     <p class="byline">Rédigé par <a href="/equipe">Sabrina Chmura</a>, psychologue clinicienne spécialisée en neuropsychologie. Dernière révision le 13 septembre 2026.</p>
@@ -267,7 +301,7 @@
         </p>
           <p style="font-size:13px;color:var(--ink-muted);margin-top:10px;">Contact&nbsp;: <a href="mailto:contact@bilan-mdph.fr">contact@bilan-mdph.fr</a></p>
       </div>
-      <div><h4>Bilans</h4><ul><li><a href="/bilan-mdph-adulte">Bilan MDPH adulte</a></li><li><a href="/bilan-neuropsychologique-mdph">Bilan neuropsychologique</a></li><li><a href="/bilan-psychologique-mdph">Bilan psychologique</a></li><li><a href="/bilan-a-distance/">Bilan à distance</a></li><li><a href="/bilan-en-deux-jours">Bilan en un ou deux jours</a></li><li><a href="/prix-bilan-mdph">Prix et remboursement</a></li></ul></div><div><h4>Ressources</h4><ul><li><a href="/retentissement-fonctionnel">Du trouble au retentissement</a></li><li><a href="/checklist-dossier-mdph-2026">Checklist dossier MDPH</a></li><li><a href="/questionnaire-complementaire-tnd">Questionnaire complémentaire TND</a></li><li><a href="/reforme-formulaire-mdph-2026">Réforme du formulaire 2026</a></li><li><a href="/dossier-mdph-adulte">Constituer un dossier</a></li><li><a href="/certificat-medical-mdph">Certificat médical</a></li><li><a href="/projet-de-vie-mdph">Projet de vie</a></li><li><a href="/pieces-a-joindre-dossier-mdph">Pièces à joindre</a></li></ul></div><div><h4>Situations</h4><ul><li><a href="/handicap-cognitif-mdph">Handicap cognitif</a></li><li><a href="/handicap-psychique-mdph">Handicap psychique</a></li><li><a href="/handicap-invisible-rqth">Handicap invisible et RQTH</a></li><li><a href="/tdah-adulte-mdph">TDAH adulte et MDPH</a></li><li><a href="/tdah-rqth">TDAH et RQTH</a></li><li><a href="/autisme-adulte-mdph/">Autisme adulte et MDPH</a></li></ul></div><div><h4>Personnes âgées</h4><ul><li><a href="/bilan-neuropsychologique-personne-agee">Troubles de la mémoire après 60 ans</a></li><li><a href="/mdph-apres-60-ans">MDPH après 60 ans</a></li><li><a href="/handicap-vieillissant">Handicap qui vieillit avec vous</a></li><li><a href="/aidants-et-proches">Aidants et proches</a></li></ul></div>
+      <div><h4>Bilans</h4><ul><li><a href="/bilan-mdph-adulte">Bilan MDPH adulte</a></li><li><a href="/bilan-neuropsychologique-mdph">Bilan neuropsychologique</a></li><li><a href="/bilan-psychologique-mdph">Bilan psychologique</a></li><li><a href="/bilan-a-distance/">Bilan à distance</a></li><li><a href="/bilan-en-deux-jours">Bilan en un ou deux jours</a></li><li><a href="/prix-bilan-mdph">Prix et remboursement</a></li></ul></div><div><h4>Ressources</h4><ul><li><a href="/retentissement-fonctionnel">Du trouble au retentissement</a></li><li><a href="/checklist-dossier-mdph-2026">Checklist dossier MDPH</a></li><li><a href="/questionnaire-complementaire-tnd">Questionnaire complémentaire TND</a></li><li><a href="/reforme-formulaire-mdph-2026">Réforme du formulaire 2026</a></li><li><a href="/dossier-mdph-adulte">Constituer un dossier</a></li><li><a href="/certificat-medical-mdph">Certificat médical</a></li><li><a href="/projet-de-vie-mdph">Projet de vie</a></li><li><a href="/pieces-a-joindre-dossier-mdph">Pièces à joindre</a></li><li><a href="/mises-a-jour">Mises à jour du site</a></li></ul></div><div><h4>Situations</h4><ul><li><a href="/handicap-cognitif-mdph">Handicap cognitif</a></li><li><a href="/handicap-psychique-mdph">Handicap psychique</a></li><li><a href="/handicap-invisible-rqth">Handicap invisible et RQTH</a></li><li><a href="/tdah-adulte-mdph">TDAH adulte et MDPH</a></li><li><a href="/tdah-rqth">TDAH et RQTH</a></li><li><a href="/autisme-adulte-mdph/">Autisme adulte et MDPH</a></li></ul></div><div><h4>Personnes âgées</h4><ul><li><a href="/bilan-neuropsychologique-personne-agee">Troubles de la mémoire après 60 ans</a></li><li><a href="/mdph-apres-60-ans">MDPH après 60 ans</a></li><li><a href="/handicap-vieillissant">Handicap qui vieillit avec vous</a></li><li><a href="/aidants-et-proches">Aidants et proches</a></li></ul></div>
     </div>
     <div class="footer-legal">
         <p class="footer-private-notice">Site privé du Cabinet Bouche &amp; Chmura. Ce site n’est ni une MDPH, ni un service de l’État.</p>
@@ -297,7 +331,6 @@
     html.classList.toggle('a11y-contrast-inverse', prefs.contrast === 'inverse');
     html.classList.toggle('a11y-dyslexia', prefs.dyslexia === 'adapter');
     html.classList.toggle('a11y-leading', prefs.leading === 'augmenter');
-    html.classList.toggle('a11y-no-justify', prefs.justify === 'supprimer');
     html.classList.toggle('a11y-big-targets', prefs.targets === 'augmenter');
   }
   var prefs = readPrefs();
