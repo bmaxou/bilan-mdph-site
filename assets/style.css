@@ -328,6 +328,13 @@ html.a11y-big-targets .primary-nav a, html.a11y-big-targets .page-card, html.a11
 .listen-text-mode .site-header, .listen-text-mode .breadcrumb, .listen-text-mode .site-footer,
 .listen-text-mode .box-source, .listen-text-mode .glossary-nav{ display:none !important; }
 .listen-text-mode main article{ max-width:680px; margin:40px auto; font-size:19px; line-height:1.75; }
+
+.glossary-nav{ display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 26px; }
+.glossary-nav a{ display:inline-flex; align-items:center; justify-content:center;
+  min-width:40px; min-height:40px; padding:0 10px; border:1px solid var(--border);
+  border-radius:var(--radius); background:var(--paper-raised); color:var(--accent-strong);
+  font-weight:600; text-decoration:none; }
+.glossary-nav a:hover, .glossary-nav a:focus-visible{ background:var(--accent-strong); color:#fff; border-color:var(--accent-strong); }
 .listen-mask{
   position:fixed; inset:0; z-index:30; pointer-events:none;
   --listen-mask-y:50vh;
