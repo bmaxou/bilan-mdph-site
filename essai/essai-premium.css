@@ -52,19 +52,6 @@
 .hero-stat b{ display:block; font-family: var(--serif); font-size: 26px; color: var(--ink); }
 .hero-stat span{ font-size: 13.5px; color: var(--ink-muted); }
 
-/* --- Barre « Écouter » simplifiée de l'accueil --- */
-.page-tools{
-  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
-  margin: 0 0 26px; padding-bottom:18px; border-bottom:1px solid var(--border);
-}
-.listen-btn{
-  display:inline-flex; align-items:center; gap:8px;
-  background:var(--paper-raised); border:1px solid var(--accent); border-radius:var(--radius);
-  padding:9px 16px; font:inherit; font-size:13.5px; font-weight:700; color:var(--accent); cursor:pointer;
-}
-.listen-btn:hover{ border-color:var(--accent-strong); color:var(--accent-strong); background:var(--accent-tint); }
-.listen-btn.is-playing{ border-color:var(--accent-strong); color:var(--accent-strong); background:var(--accent-tint); }
-
 /* --- Grille thématique de la page d'accueil --- */
 .theme-nav{ display:flex; gap:10px; flex-wrap:wrap; margin: 8px 0 34px; }
 .theme-nav button{
