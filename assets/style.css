@@ -528,6 +528,26 @@ article{ max-width: var(--maxw); margin: 0 auto; padding: 12px 20px 10px; }
 .box-attention{ background: var(--signal-tint); border-color: transparent; }
 .box-attention .box-label{ color: var(--signal); }
 
+/* Onglets dépliables (accordéon des bilans à distance) */
+.accordion-item{ border:1px solid var(--border); border-radius: var(--radius); margin:16px 0; overflow:hidden; }
+.accordion-item summary{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; cursor:pointer;
+  list-style:none; padding:18px 20px; margin:0;
+}
+.accordion-item summary::-webkit-details-marker{ display:none; }
+.accordion-item summary:hover{ background: var(--paper-raised); }
+.accordion-item summary:focus-visible{ outline:2px solid var(--accent-strong); outline-offset:-2px; }
+.accordion-item .accordion-title{ display:flex; flex-direction:column; gap:3px; }
+.accordion-item .accordion-title b{ font-family:var(--serif); font-size:18px; font-weight:700; color:var(--ink); }
+.accordion-item .accordion-title span{ font-size:13.5px; color:var(--ink-muted); font-weight:400; }
+.accordion-item .fold-arrow{ transition:transform .18s ease; flex:none; color:var(--ink-muted); }
+.accordion-item[open] .fold-arrow{ transform:rotate(180deg); }
+.accordion-item[open] summary{ border-bottom:1px solid var(--border); }
+.accordion-body{ padding:4px 20px 20px; }
+.accordion-body p:first-child{ margin-top:0; }
+.accordion-body h4{ font-size:14.5px; margin:18px 0 6px; }
+@media print{ .accordion-item{ display:block; } }
+
 .box-verifier{ background: var(--signal-tint); border: 1px dashed var(--signal); }
 .box-verifier .box-label{ color: var(--signal); }
 
