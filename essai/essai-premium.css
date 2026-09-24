@@ -81,6 +81,7 @@
 }
 .page-card-icon svg{ width:19px; height:19px; }
 .page-card h3{ margin: 4px 0 0; font-size:16.5px; }
+.page-card-kicker{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:var(--accent-strong); margin:2px 0 -6px; }
 .page-card p{ margin:0; font-size:13.5px; color: var(--ink-muted); flex:1; }
 .page-card-go{ font-size:13px; font-weight:700; color: var(--accent); }
 
