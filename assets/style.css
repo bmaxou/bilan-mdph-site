@@ -679,3 +679,7 @@ tbody tr:nth-child(even){ background: rgba(0,0,0,0.015); }
   body{ background:#fff; }
   a{ color:#000; text-decoration:none; }
 }
+
+/* Écouter et Partager regroupés en haut de page */
+.listen-tool + .share-tools{ margin:14px 0 6px; }
+.listen-tool + .share-tools .share-label{ margin:0 0 10px; }

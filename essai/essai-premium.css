@@ -90,3 +90,9 @@
   background: var(--signal-tint); color: var(--signal); text-align:center;
   font-size:13px; padding:9px 14px; font-weight:700;
 }
+
+/* Accueil : Écouter et Partager en tête de page */
+.home-tools{ padding-top:14px; }
+.home-tools .page-tools{ margin:0; padding-bottom:12px; border-bottom:0; }
+.home-tools .share-tools{ margin:0; }
+.home-tools .share-label{ margin:0 0 8px; }
