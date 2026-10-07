@@ -683,3 +683,29 @@ tbody tr:nth-child(even){ background: rgba(0,0,0,0.015); }
 /* Écouter et Partager regroupés en haut de page */
 .listen-tool + .share-tools{ margin:14px 0 6px; }
 .listen-tool + .share-tools .share-label{ margin:0 0 10px; }
+
+/* --- Contrastes renforcé et inversé : le texte posé sur un fond d'accent prend la couleur du fond de page
+   (le blanc fixe devenait illisible sur fond blanc ou jaune). --- */
+html.a11y-contrast-fort{ --on-accent:#353642; }
+html.a11y-contrast-inverse{ --on-accent:#00007B; }
+html.a11y-contrast-fort .skip-link, html.a11y-contrast-inverse .skip-link,
+html.a11y-contrast-fort .header-cta, html.a11y-contrast-inverse .header-cta,
+html.a11y-contrast-fort .btn-primary, html.a11y-contrast-inverse .btn-primary,
+html.a11y-contrast-fort .btn.btn-primary, html.a11y-contrast-inverse .btn.btn-primary,
+html.a11y-contrast-fort .btn.btn-primary:hover, html.a11y-contrast-inverse .btn.btn-primary:hover,
+html.a11y-contrast-fort .site-search-bar-icon, html.a11y-contrast-inverse .site-search-bar-icon,
+html.a11y-contrast-fort .site-assistant-submit, html.a11y-contrast-inverse .site-assistant-submit,
+html.a11y-contrast-fort .listen-cell-menu, html.a11y-contrast-inverse .listen-cell-menu,
+html.a11y-contrast-fort .hero-actions .btn, html.a11y-contrast-inverse .hero-actions .btn,
+html.a11y-contrast-fort .glossary-nav a:hover, html.a11y-contrast-inverse .glossary-nav a:hover,
+html.a11y-contrast-fort .glossary-nav a:focus-visible, html.a11y-contrast-inverse .glossary-nav a:focus-visible{
+  color:var(--on-accent) !important;
+}
+html.a11y-contrast-fort .cta-block, html.a11y-contrast-inverse .cta-block{ color:var(--on-accent); border:2px solid var(--border); }
+html.a11y-contrast-fort .cta-block h2, html.a11y-contrast-inverse .cta-block h2,
+html.a11y-contrast-fort .cta-block p, html.a11y-contrast-inverse .cta-block p,
+html.a11y-contrast-fort .btn-ghost, html.a11y-contrast-inverse .btn-ghost{ color:var(--on-accent) !important; }
+html.a11y-contrast-fort .cta-block .btn, html.a11y-contrast-inverse .cta-block .btn{
+  background:var(--paper); color:var(--accent) !important; border:2px solid var(--paper);
+}
+html.a11y-contrast-fort .cta-block .btn:hover, html.a11y-contrast-inverse .cta-block .btn:hover{ background:var(--paper-raised); }
