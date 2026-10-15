@@ -10,11 +10,13 @@
 
 $SALT = 'fb7557d5e7e81792';
 $HASH_MAX = '9db76516e01e22072aeeed5abb83cdcd3a62bf8587abfafaf9371e79344b5931';
+$HASH_MAX = [$HASH_MAX, 'bdb7f6aa29279ca4fe7173df7eaaba11bf92f5fdb77ee00bfa84cf03f6f8e75f'];
 $TOKEN_MAX = 'c74f96e7453df185ebd571aa6990dff8bd19201fdb4d9b17';
 // Accès restreint (ex. collaboratrice) : mot de passe distinct de celui de Max, qui ne
 // donne jamais accès au portail des autres sites, même en tapant l'adresse nue ou
 // /portail.html directement. Pour changer ce mot de passe : voir GUIDE-MISE-A-JOUR.md.
 $HASH_GUEST = '65fe55ef91ecff9608b35ceee0f5d9919156d837ebfd07c1278db5ee34599173';
+$HASH_GUEST = [$HASH_GUEST, '8536c3d29b25ccdba51b37d83fb05b50509c20c6898bb76d60cd337488d4f9ed'];
 $TOKEN_GUEST = 'd479e1f46927f514ef2deecd9af37567232b56745189fc2b';
 $COOKIE_NAME = 'bmdph_gate';
 
@@ -32,7 +34,7 @@ $redirect = '/portail.html';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $pass = isset($_POST['password']) ? $_POST['password'] : '';
 $attempt = hash('sha256', $SALT . ':' . $pass);
-if (hash_equals($HASH_MAX, $attempt)) {
+if (in_array($attempt, $HASH_MAX, true)) {
 setcookie($COOKIE_NAME, $TOKEN_MAX, [
 'expires' => time() + 60 * 60 * 24 * 30,
 'path' => '/',
@@ -42,7 +44,7 @@ setcookie($COOKIE_NAME, $TOKEN_MAX, [
 ]);
 header('Location: ' . $redirect);
 exit;
-} elseif (hash_equals($HASH_GUEST, $attempt)) {
+} elseif (in_array($attempt, $HASH_GUEST, true)) {
 // Accès restreint : jamais le portail, même si la redirection demandée y menait.
 $guest_redirect = ($redirect === '/portail.html') ? '/index.html' : $redirect;
 setcookie($COOKIE_NAME, $TOKEN_GUEST, [
@@ -65,7 +67,7 @@ $error = 'Mot de passe incorrect.';
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Accès privé : bilan-mdph.fr</title>
+<title>Site en maintenance : bilan-mdph.fr</title>
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=fraunces@400,500,600&f[]=general-sans@400,500,600&display=swap">
 <link rel="stylesheet" href="/assets/style.css">
@@ -81,12 +83,12 @@ body{display:flex;align-items:center;justify-content:center;min-height:100vh;pad
 </head>
 <body>
 <div class="gate-box">
-<h1>Site en cours de finalisation</h1>
-<p>Ce site n'est pas encore public. Merci de saisir le mot de passe qui vous a été communiqué.</p>
+<h1>Site en maintenance</h1>
+<p>Le site est actuellement en maintenance. Merci de saisir le mot de passe pour y accéder.</p>
 <?php if ($error): ?><p class="gate-error"><?php echo htmlspecialchars($error); ?></p><?php endif; ?>
 <form method="post" action="/gate.php?r=<?php echo htmlspecialchars($redirect); ?>">
 <input type="password" name="password" autofocus placeholder="Mot de passe">
-<button class="btn" type="submit">Accéder au site</button>
+<button class="btn" type="submit">Accéder</button>
 </form>
 </div>
 </body>
