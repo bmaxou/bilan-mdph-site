@@ -15,7 +15,7 @@
       },
       {
         "heading": "Au cabinet",
-        "text": "Un bilan se fait en présentiel, sur une ou deux demi-journées. Voir la page présentiel et visioconférence pour ce qui est possible et ce qui ne l'est pas, et la page lieux de consultation pour les adresses."
+        "text": "Un bilan se fait en présentiel, sur une ou deux demi-journées. Voir la page présentiel et téléconsultation pour ce qui est possible et ce qui ne l'est pas, et la page lieux de consultation pour les adresses."
       },
       {
         "heading": "Prendre rendez-vous pour un bilan",
@@ -43,7 +43,7 @@
       },
       {
         "heading": "Déroulé et délais",
-        "text": "Le cabinet consulte en Île-de-France et en Ardèche. Le bilan se fait en présentiel, en général sur une ou deux demi-journées ; la visioconférence n'est possible que pour le rendez-vous d'anamnèse d'un adulte, si l'on ne peut pas faire autrement. Les honoraires figurent uniquement sur la fiche Doctolib des praticiens ; le fonctionnement général des tarifs et du remboursement est expliqué sur la page prix et remboursement."
+        "text": "Le cabinet consulte en Île-de-France et en Ardèche. Le bilan se fait en présentiel, en général sur une ou deux demi-journées ; la téléconsultation n'est possible que pour le rendez-vous d'anamnèse d'un adulte, si l'on ne peut pas faire autrement. Les honoraires figurent uniquement sur la fiche Doctolib des praticiens ; le fonctionnement général des tarifs et du remboursement est expliqué sur la page prix et remboursement."
       },
       {
         "heading": "Prendre rendez-vous pour un bilan",
@@ -347,7 +347,7 @@
       },
       {
         "heading": "Où et comment nous consultons",
-        "text": "Le cabinet consulte en Île-de-France et en Ardèche. Les bilans se font en présentiel ; la visioconférence n'est possible que pour le rendez-vous d'anamnèse d'un adulte, si l'on ne peut pas faire autrement. Les pages présentiel et visioconférence et délais d'un bilan détaillent ce fonctionnement."
+        "text": "Le cabinet consulte en Île-de-France et en Ardèche. Les bilans se font en présentiel ; la téléconsultation n'est possible que pour le rendez-vous d'anamnèse d'un adulte, si l'on ne peut pas faire autrement. Les pages présentiel et téléconsultation et délais d'un bilan détaillent ce fonctionnement."
       },
       {
         "heading": "Explorer par sujet",
@@ -362,12 +362,12 @@
   {
     "url": "/lieux-de-consultation",
     "title": "Où nous consultons",
-    "description": "Adresses de consultation du Cabinet Bouche & Chmura, accessibilité des cabinets et visioconférence limitée au rendez-vous d'anamnèse d'un adulte.",
+    "description": "Adresses de consultation du Cabinet Bouche & Chmura, accessibilité des cabinets et téléconsultation limitée au rendez-vous d'anamnèse d'un adulte.",
     "theme": "cabinet",
     "sections": [
       {
         "heading": "Où nous consultons",
-        "text": "Cabinet Bouche & Chmura, 5 avenue Clert et Robert, 92700 Colombes. Cabinet Bouche & Chmura, 10 passage de la Main Ferme, 93320 Les Pavillons-sous-Bois, cabinet habilité PMR, accessible aux personnes à mobilité réduite. Cabinet Bouche & Chmura, 24 Grande Rue, 07410 Colombier-le-Vieux. Le bilan se fait en présentiel. La visioconférence est possible uniquement pour le rendez-vous d'anamnèse d'un adulte, si l'on ne peut pas faire autrement."
+        "text": "Cabinet Bouche & Chmura, 5 avenue Clert et Robert, 92700 Colombes. Cabinet Bouche & Chmura, 10 passage de la Main Ferme, 93320 Les Pavillons-sous-Bois, cabinet habilité PMR, accessible aux personnes à mobilité réduite. Cabinet Bouche & Chmura, 24 Grande Rue, 07410 Colombier-le-Vieux. Le bilan se fait en présentiel. La téléconsultation est possible uniquement pour le rendez-vous d'anamnèse d'un adulte, si l'on ne peut pas faire autrement."
       }
     ]
   },
@@ -649,21 +649,21 @@
   },
   {
     "url": "/bilan-a-distance/",
-    "title": "Présentiel et visioconférence",
+    "title": "Présentiel et téléconsultation",
     "description": "Le bilan neuropsychologique se fait en présentiel. Le bilan psychologique peut se faire à distance, selon la situation.",
     "theme": "bilans",
     "sections": [
       {
-        "heading": "Présentiel et visioconférence : ce qui est possible, ce qui ne l'est pas",
-        "text": "Les bilans se font en présentiel, au cabinet. La visioconférence n'est possible que pour le rendez-vous d'anamnèse d'un adulte, si l'on ne peut pas faire autrement."
+        "heading": "Présentiel et téléconsultation : ce qui est possible, ce qui ne l'est pas",
+        "text": "Les bilans se font en présentiel, au cabinet. La téléconsultation n'est possible que pour le rendez-vous d'anamnèse d'un adulte, si l'on ne peut pas faire autrement."
       },
       {
         "heading": "Les bilans se font en présentiel",
         "text": "Le bilan neuropsychologique se fait en présentiel, et non à distance. Il en va de même pour les autres rendez-vous du bilan."
       },
       {
-        "heading": "Quand la visioconférence est possible",
-        "text": "La visioconférence est possible uniquement pour le rendez-vous d'anamnèse d'un adulte, et seulement si l'on ne peut pas faire autrement. Elle n'est pas possible pour les autres rendez-vous du bilan."
+        "heading": "Quand la téléconsultation est possible",
+        "text": "La téléconsultation est possible uniquement pour le rendez-vous d'anamnèse d'un adulte, et seulement si l'on ne peut pas faire autrement. Elle n'est pas possible pour les autres rendez-vous du bilan."
       }
     ]
   },
@@ -747,7 +747,7 @@
       },
       {
         "heading": "Les réunions à l'école : le cabinet peut y participer",
-        "text": "Les cliniciens du cabinet participent aux réunions de l'équipe éducative où se préparent un PAP, un PAI ou un PPS. Y sont réunis le directeur ou le chef d'établissement, les enseignants, les parents et l'enfant. Ces réunions peuvent se tenir à distance, par téléphone ou en visioconférence, selon la situation."
+        "text": "Les cliniciens du cabinet participent aux réunions de l'équipe éducative où se préparent un PAP, un PAI ou un PPS. Y sont réunis le directeur ou le chef d'établissement, les enseignants, les parents et l'enfant. Ces réunions peuvent se tenir à distance, par téléphone ou en téléconsultation, selon la situation."
       },
       {
         "heading": "Les aménagements d'examens",
