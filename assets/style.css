@@ -709,3 +709,7 @@ html.a11y-contrast-fort .cta-block .btn, html.a11y-contrast-inverse .cta-block .
   background:var(--paper); color:var(--accent) !important; border:2px solid var(--paper);
 }
 html.a11y-contrast-fort .cta-block .btn:hover, html.a11y-contrast-inverse .cta-block .btn:hover{ background:var(--paper-raised); }
+
+/* Questions fréquentes : la ligne se montre cliquable au survol */
+.faq summary{ cursor:pointer; }
+.faq summary:hover{ font-weight:700; color:var(--ink); }
